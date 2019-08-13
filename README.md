@@ -17,7 +17,7 @@ Additional features:
 * The page can also be in dark mode with a button click. The button will be in the selector section. 
 
 ## Wireframes
-![wireframe](images/time-usage-wireframe.png)
+![wireframe](/src/assets/images/time-usage-wireframe.png)
 
 ## Architecture and Technology
 * Vanilla Javascript to handle the selecting logic
@@ -39,14 +39,14 @@ Additional features:
 * Study D3 visualizations and CSS transitions.
 
 ### Day 3
-* Add transitions between data sets for multiple year selections. 
+* Add clock effect for display hours.
 
 ### Day 4
-* Add transitions between data sets for multiple year selections. 
+* Add clock effect for display hours.
 
 ### Day 5
 * Dark mode, debug, deploy. 
 
 ## Bonus Features
 * Another clock might be beneficial for comparing and contrasting two specific years.
-* Single year selections are largely static, but multiple year selections have the option of being cycled through rather than averaged as a whole. There would be transitions as the proportions change. 
+* Single year selections are largely static, but multiple year selections have the option of being cycled through rather than averaged as a whole. There would be transitions as the proportions change.
