@@ -1,0 +1,38 @@
+/* RESET */
+html, body {
+    margin: 0;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.svg-container {
+    border: red solid 1px;
+    flex: 8;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    /* background-image: url('src/assets/images/watch-face.png'); */
+    /* background-position: center; */
+    /* background-size: cover; */
+}
+
+.sides {
+    flex: 2;
+    text-align: center;
+    margin: auto 10px;
+    height: 500px;
+    border: 2px solid black;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    
+}
+
+.content {
+    display: flex;
+}

@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
-    "watch": "webpack --watch --config webpack.dev.js",
+    "watch": "webpack --watch --mode:development --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js  --optimize-minimize"
   },
   "repository": {
@@ -39,5 +39,8 @@
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.8.0",
     "webpack-merge": "^4.2.1"
+  },
+  "devDependencies": {
+    "mini-css-extract-plugin": "^0.8.0"
   }
 }
