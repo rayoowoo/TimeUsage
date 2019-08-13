@@ -28,6 +28,7 @@ Additional features:
 ## Implementation Timeline
 
 ### Day 1
+* Setup webpack, package.json.
 * Create basic layout of the selectors, clock, and printed data areas.
 * Gather and organize necessary data from the Department of Labor website (https://www.bls.gov/tus/).
 * Create selectors using Javascript.
