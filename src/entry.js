@@ -11,7 +11,20 @@ var svg = d3.select("#watch")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 var radius = Math.min(width, height) / 2 - margin;
 
-var data = { a: 1, b: 20, c: 30, d: 8, e: 12 }
+var data = {
+    a: 9.1,
+    b: 1.18,
+    c: 1.57,
+    d: 0.71,
+    e: 0.57,
+    f: 0.22,
+    g: 4.74,
+    h: 0.61,
+    i: 0.25,
+    j: 4.62,
+    k: 0.23,
+    l: 0.2
+}
 
 
 var pie = d3.pie()
