@@ -13,7 +13,7 @@ Users are able to view how Americans have used time on a daily basis based on a 
 * change in one specific category from one year to another year (e.g. Working, from 2003 to 2008)
 
 Additional features:
-* Single year selections are largely static, but multiple year selections have the option of being cycled through rather than averaged as a whole. 
+* When displaying the data for single years, the clock hand can move and slowly reveal the data as the hand moves. 
 * The page can also be in dark mode with a button click. The button will be in the selector section. 
 
 ## Wireframes
@@ -47,5 +47,5 @@ Additional features:
 * Dark mode, debug, deploy. 
 
 ## Bonus Features
-* Another clock might be beneficial for comparing and contrasting two specific years. 
-* When displaying the data for single years, the clock hand can move and slowly reveal the data as the hand moves. 
+* Another clock might be beneficial for comparing and contrasting two specific years.
+* Single year selections are largely static, but multiple year selections have the option of being cycled through rather than averaged as a whole. There would be transitions as the proportions change. 
