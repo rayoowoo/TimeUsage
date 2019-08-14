@@ -36,3 +36,9 @@ body {
 .content {
     display: flex;
 }
+
+.selectors {
+    width: 80%;
+    background-color: white;
+    
+}

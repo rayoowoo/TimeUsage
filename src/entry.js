@@ -1,17 +1,10 @@
-var margin = 40;
+import Watch from './js/watch'
+import Selectors from './js/selectors'
+import {employedByGender} from './assets/data/employedByGenderDataShaped'
 
-let width, height;
 
-var svg = d3.select("#watch")
-    .classed("svg-container", true)
-    .append("svg")
-    .attr("width", function(d) { width = this.parentNode.clientWidth; return width})
-    .attr("height", function(d) { height = this.parentNode.clientHeight; return height})
-    .append("g")
-    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-var radius = Math.min(width, height) / 2 - margin;
 
-var data = {
+const data = {
     a: 9.1,
     b: 1.18,
     c: 1.57,
@@ -26,26 +19,8 @@ var data = {
     l: 0.2
 }
 
+const genderData = Object.values(employedByGender).map( datum => {return datum})
 
-var pie = d3.pie()
-    .value(function (d) { return d.value; })
-var data_ready = pie(d3.entries(data))
-
-svg
-    .selectAll('whatever')
-    .data(data_ready)
-    .enter()
-    .append('path')
-    .attr('d', d3.arc()
-        .innerRadius(radius* 0.8)    
-        .outerRadius(radius)
-    )
-    .attr('fill', 'gray')
-    .attr("stroke", "white")
-    .style("stroke-width", "4px")
-    .style("opacity", 0.9)
-
-window.onresize = document.location.reload;
-
-// https://stackoverflow.com/questions/16265123/resize-svg-when-window-is-resized-in-d3-js
-// for responsive SVG design
+const watch = Watch(menData);
+const selectors = new Selectors();
+selectors.addSelectors();

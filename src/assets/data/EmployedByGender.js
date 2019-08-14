@@ -1,4 +1,4 @@
-[
+const employedByGender = [
   {
     "2013": 8.88,
     "2014": 8.93,
@@ -1218,3 +1218,48 @@
     "": ""
   }
 ]
+
+// let data = employedByGender.map( datum => {
+//   const title = datum["Series Title"];
+//   const gender = datum.Gender;
+//   const category = datum['Category?']
+//   delete datum['Category?']
+//   delete datum.ID;
+//   delete datum['Series ID'];
+//   delete datum.Gender;
+//   delete datum['Series Title'];
+//   delete datum[''];
+//   return {
+//     [title+'-'+gender]: {
+//       category,
+//       [gender]: datum
+//     }
+//   }
+// })
+
+let data = {};
+for (let i = 0; i < employedByGender.length; i++) {
+  const datum = employedByGender[i];
+  const title = datum["Series Title"];
+  const gender = datum.Gender;
+  const category = datum['Category?']
+  delete datum['Category?']
+  delete datum.ID;
+  delete datum['Series ID'];
+  delete datum.Gender;
+  delete datum['Series Title'];
+  delete datum[''];
+  data[title + '-' + gender] = {
+      category,
+      [gender]: datum
+    }
+  };
+
+var fs = require("fs");
+fs.writeFile('./employedByGenderShaped.js', JSON.stringify(data, null, 4), (err) => {
+  if(err) {
+    console.error(err);
+    return;
+  };
+  console.log("File has been created");
+});
