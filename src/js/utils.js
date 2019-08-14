@@ -21,9 +21,7 @@ class Utils {
 
     arrayMerge (...arrays) {
         let final = [];
-        if (arrays.every( arr => {
-            return arr.length === arrays[0].length;
-        }) === false) {
+        if (arrays.every( arr => { return arr.length === arrays[0].length; }) === false) {
             console.log("The arrays are not the same length");
             return;
         }
@@ -42,8 +40,7 @@ class Utils {
         const activityFilter = [];
         activities.forEach( activity => {
             activityFilter.push(data[activity]);
-        }
-        )
+        })
         const genderFilter = activityFilter.map(datum => {
             return { [datum.activity]: datum[gender] };
         })

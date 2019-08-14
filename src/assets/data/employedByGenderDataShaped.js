@@ -1,6 +1,6 @@
 export const employedByGender = {
-    "Personal care activities (includes travel)": {
-        "activity": "Personal care activities (includes travel)",
+    "Personal care activities": {
+        "activity": "Personal care activities",
         "category": "Y",
         "Men": {
             "2013": 8.88,
@@ -27,8 +27,8 @@ export const employedByGender = {
             "2018": 9.31
         }
     },
-    "Eating and drinking (includes travel)": {
-        "activity": "Eating and drinking (includes travel)",
+    "Eating and drinking": {
+        "activity": "Eating and drinking",
         "category": "Y",
         "Men": {
             "2013": 1.23,
@@ -55,8 +55,8 @@ export const employedByGender = {
             "2018": 1.06
         }
     },
-    "Household activities (includes travel)": {
-        "activity": "Household activities (includes travel)",
+    "Household activities": {
+        "activity": "Household activities",
         "category": "Y",
         "Men": {
             "2013": 1.21,
@@ -111,8 +111,8 @@ export const employedByGender = {
             "2018": 0.78
         }
     },
-    "Caring for and helping household members (includes travel)": {
-        "activity": "Caring for and helping household members (includes travel)",
+    "Caring for and helping household members": {
+        "activity": "Caring for and helping household members",
         "category": "Y",
         "Men": {
             "2013": 0.95,
@@ -139,8 +139,8 @@ export const employedByGender = {
             "2018": 1.58
         }
     },
-    "Caring for and helping nonhousehold members (includes travel)": {
-        "activity": "Caring for and helping nonhousehold members (includes travel)",
+    "Caring for and helping nonhousehold members": {
+        "activity": "Caring for and helping nonhousehold members",
         "category": "Y",
         "Men": {
             "2013": 0.08,
@@ -167,8 +167,8 @@ export const employedByGender = {
             "2018": 0.11
         }
     },
-    "Working and work-related activities (includes travel)": {
-        "activity": "Working and work-related activities (includes travel)",
+    "Working and work-related activities": {
+        "activity": "Working and work-related activities",
         "category": "Y",
         "Men": {
             "2013": 6.43,
@@ -195,8 +195,8 @@ export const employedByGender = {
             "2018": 4.97
         }
     },
-    "Educational activities (includes travel)": {
-        "activity": "Educational activities (includes travel)",
+    "Educational activities": {
+        "activity": "Educational activities",
         "category": "Y",
         "Men": {
             "2013": 0.08,
@@ -251,8 +251,8 @@ export const employedByGender = {
             "2018": 0.22
         }
     },
-    "Leisure and sports (includes travel)": {
-        "activity": "Leisure and sports (includes travel)",
+    "Leisure and sports": {
+        "activity": "Leisure and sports",
         "category": "Y",
         "Men": {
             "2013": 3.97,
@@ -279,8 +279,8 @@ export const employedByGender = {
             "2018": 3.36
         }
     },
-    "Telephone calls, mail, and e-mail (includes travel)": {
-        "activity": "Telephone calls, mail, and e-mail (includes travel)",
+    "Telephone calls, mail, and email": {
+        "activity": "Telephone calls, mail, and email",
         "category": "Y",
         "Men": {
             "2013": 0.06,
@@ -307,8 +307,8 @@ export const employedByGender = {
             "2018": 0.1
         }
     },
-    "Other activities, not elsewhere classified (includes misc. travel and data codes)": {
-        "activity": "Other activities, not elsewhere classified (includes misc. travel and data codes)",
+    "Other activities": {
+        "activity": "Other activities",
         "category": "Y",
         "Men": {
             "2013": 0.23,
