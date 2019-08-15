@@ -18,16 +18,20 @@ class everyoneSelectors {
     updateActivity(e) {
         e.preventDefault();
         if (e.target.checked) {
+            e.target.parentNode.classList.add("selected");
             if (e.target.value === "All Activities") {
                 document.querySelectorAll("#ev_activityOption").forEach(option => { option.checked = false; option.parentNode.classList.remove("selected") })
                 this.selection["activities"] = ["All Activities"]
             } else {
-                document.querySelector("#ev_activityOptionAll").checked = false;
+                const all = document.querySelector("#ev_activityOptionAll");
+                all.checked = false;
+                all.parentNode.classList.remove("selected");
                 const newArr = this.selection["activities"].filter(activity => { return activity !== "All Activities" })
                 newArr.push(e.target.value);
                 this.selection["activities"] = newArr;
             }
         } else if (e.target.checked === false) {
+            e.target.parentNode.classList.remove("selected");
             this.selection = this.selection.filter(select => { return select !== e.target.value })
         }
     }
@@ -35,6 +39,7 @@ class everyoneSelectors {
     updateYears(e) {
         e.preventDefault();
         if (e.target.checked) {
+            e.target.parentNode.classList.add("selected");
             if (e.target.value === "All Years") {
                 document.querySelectorAll("#ev_yearOption").forEach(option => { option.checked = false })
                 this.selection["years"] = ["All Years"]
@@ -47,6 +52,7 @@ class everyoneSelectors {
                 this.selection["years"] = newArr;
             }
         } else if (e.target.checked === false) {
+            e.target.parentNode.classList.remove("selected");
             this.selection = this.selection.filter(select => { return select !== e.target.value })
         }
     }

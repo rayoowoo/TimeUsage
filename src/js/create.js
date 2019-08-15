@@ -33,7 +33,7 @@ export const activitySelector = (updateActivity, filter, prefix) => {
 export const yearSelector = (updateYears, filter, prefix, years) => {
     const yearSelector = document.createElement("div");
     filter.appendChild(yearSelector);
-    yearSelector.classList.add("selectors")
+    yearSelector.classList.add("selectors", "year-selector")
     const yearsLabel = document.createElement("label");
     yearsLabel.innerText = "Years";
     yearSelector.appendChild(yearsLabel)

@@ -20,6 +20,7 @@ class DayComp {
     updateYears(e) {
         e.preventDefault();
         if (e.target.checked) {
+            e.target.parentNode.classList.add("selected");
             if (e.target.value === "All years") {
                 document.querySelectorAll("#d_yearOption").forEach(option => { option.checked = false; option.parentNode.classList.remove("selected") })
                 this.selection["years"] = ["All years"]
@@ -32,6 +33,7 @@ class DayComp {
                 this.selection["years"] = newArr;
             }
         } else if (e.target.checked === false) {
+            e.target.parentNode.classList.remove("selected");
             this.selection["years"] = this.selection["years"].filter(select => { return select !== e.target.value })
         }
     }
