@@ -36,7 +36,7 @@ class DayComp {
         e.preventDefault();
         const selections = this.selection;
         let years;
-        if (selections.years === "All years") {
+        if (selections.years[0] === "All years") {
             years = ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"]
         } else {
             years = selections["years"];

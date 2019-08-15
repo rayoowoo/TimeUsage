@@ -124,18 +124,17 @@ class Utils {
         const nonFilter = { "Nonholiday weekdays": activityFilter["Nonholiday weekdays"] }
         const holiFilter = { "Weekend days and holidays": activityFilter["Weekend days and holidays"] }
 
-
         const nonYearlyFilter = [];
+        const allNonYears = Object.values(nonFilter)[0];
         years.forEach(year => {
-            const allYears = Object.values(nonFilter)[0];
-            nonYearlyFilter.push(allYears[year]);
+            nonYearlyFilter.push(allNonYears[year]);
         })
         const nonData = this.arrayAverage(nonYearlyFilter);
 
         const holiYearlyFilter = [];
+        const allHoliYears = Object.values(holiFilter)[0];
         years.forEach(year => {
-            const allYears = Object.values(holiFilter)[0];
-            holiYearlyFilter.push(allYears[year]);
+            holiYearlyFilter.push(allHoliYears[year]);
         })
         const holiData = this.arrayAverage(holiYearlyFilter);
 
