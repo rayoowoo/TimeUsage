@@ -51,12 +51,12 @@ class DayComp {
     addComp() {
         const attach = document.querySelector("#selector")
 
-        const header = document.createElement("h2");
-        header.innerText = "Day Comparison";
-        attach.appendChild(header)
+        const filter = document.createElement("section");
+        attach.appendChild(filter);
+        filter.classList.add("filter", "js-day");
 
         const activitySelector = document.createElement("select");
-        attach.appendChild(activitySelector);
+        filter.appendChild(activitySelector);
         activitySelector.classList.add("selectors")
         const selectText = document.createTextNode("Select a category");
         activitySelector.appendChild(selectText);
@@ -70,7 +70,7 @@ class DayComp {
         activitySelector.addEventListener("change", this.updateActivity)
 
         const yearSelector = document.createElement("div");
-        attach.appendChild(yearSelector);
+        filter.appendChild(yearSelector);
         yearSelector.classList.add("selectors")
         const yearsLabel = document.createElement("label");
         yearsLabel.innerText = "Years";
@@ -96,10 +96,15 @@ class DayComp {
         yearSelector.addEventListener("change", this.updateYears)
 
         const selectionButton = document.createElement("button");
-        attach.appendChild(selectionButton);
+        filter.appendChild(selectionButton);
         selectionButton.classList.add("day-btn", "selector-btn");
         selectionButton.innerText = "Submit Selection";
         selectionButton.addEventListener("click", this.handleSubmit)
+
+        const description = document.createElement("p");
+        filter.appendChild(description);
+        description.classList.add("description");
+        description.innerText = "Comparison of nonholiday weekdays against weekend days and holidays";
     }
 }
 

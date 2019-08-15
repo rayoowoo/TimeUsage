@@ -6,12 +6,12 @@ class AppAcademySelector {
     addSelector() {
         const attach = document.querySelector("#selector");
 
-        const header = document.createElement("h2");
-        header.innerText = "App Academy Student";
-        attach.appendChild(header)
+        const filter = document.createElement("section");
+        attach.appendChild(filter);
+        filter.classList.add("filter", "js-app");
     
         const selectionButton = document.createElement("button");
-        attach.appendChild(selectionButton);
+        filter.appendChild(selectionButton);
         selectionButton.classList.add("app-academy-btn", "selector-btn");
         selectionButton.innerText = "App Academy Student";
         selectionButton.addEventListener("click", e => {
@@ -31,6 +31,11 @@ class AppAcademySelector {
                 "Other activities": 0.1
             }
         })
+
+        const description = document.createElement("p");
+        filter.appendChild(description);
+        description.classList.add("description");
+        description.innerText = "The typical App Academy student";
     }
 }
 

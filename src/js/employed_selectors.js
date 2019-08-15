@@ -84,26 +84,12 @@ class EmployedSelectors {
     addSelectors() {
         const attach = document.querySelector("#selector")
 
-        const header = document.createElement("h2");
-        header.innerText = "Employed by gender";
-        attach.appendChild(header)
-
-        // const activitySelector = document.createElement("select");
-        // attach.appendChild(activitySelector);
-        // activitySelector.classList.add("selectors")
-        // const selectText = document.createTextNode("Select a category");
-        // activitySelector.appendChild(selectText);
-        // const selections = ["All Activities"].concat(ACTIVITIES);
-        // selections.forEach( select => {
-        //     const activityOption = document.createElement("option");
-        //     activityOption.value = select;
-        //     activityOption.innerText = select;
-        //     activitySelector.appendChild(activityOption);
-        // })
-        // activitySelector.addEventListener("change", this.update("activities"))
+        const filter = document.createElement("section");
+        attach.appendChild(filter);
+        filter.classList.add("filter", "display", "js-employed");
 
         const activitySelector = document.createElement("div");
-        attach.appendChild(activitySelector);
+        filter.appendChild(activitySelector);
         activitySelector.classList.add("selectors")
         const activityLabel = document.createElement("label");
         activityLabel.innerText = "Activities";
@@ -128,23 +114,8 @@ class EmployedSelectors {
         })
         activitySelector.addEventListener("change", this.updateActivity)
 
-
-
-        // const yearSelector = document.createElement("select");
-        // attach.appendChild(yearSelector);
-        // yearSelector.classList.add("selectors")
-        // yearSelector.appendChild(document.createTextNode("Select years"))
-        // const years = ["All years", "2013", "2014", "2015", "2016", "2017", "2018"];
-        // years.forEach( select => {
-        //     const yearOption = document.createElement("option");
-        //     yearOption.value = select;
-        //     yearOption.innerText = select;
-        //     yearSelector.appendChild(yearOption)
-        // })
-        // yearSelector.addEventListener("change", this.updateYears)
-
         const yearSelector = document.createElement("div");
-        attach.appendChild(yearSelector);
+        filter.appendChild(yearSelector);
         yearSelector.classList.add("selectors")
         const yearsLabel = document.createElement("label");
         yearsLabel.innerText = "Years";
@@ -171,7 +142,7 @@ class EmployedSelectors {
 
 
         const genderSelector = document.createElement("select");
-        attach.appendChild(genderSelector);
+        filter.appendChild(genderSelector);
         genderSelector.classList.add("selectors")
         genderSelector.appendChild(document.createTextNode("Select gender"))
         const genders = ["Total", "Women", "Men"];
@@ -185,10 +156,15 @@ class EmployedSelectors {
 
 
         const selectionButton = document.createElement("button");
-        attach.appendChild(selectionButton);
+        filter.appendChild(selectionButton);
         selectionButton.classList.add("employed-btn", "selector-btn");
         selectionButton.innerText = "Submit Selection";
         selectionButton.addEventListener("click", this.handleSubmit)
+
+        const description = document.createElement("p");
+        filter.appendChild(description);
+        description.classList.add("description");
+        description.innerText = "Employed men and women on an average day";
     }
 }
 

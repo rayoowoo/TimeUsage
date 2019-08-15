@@ -49,13 +49,13 @@ class GenderComp {
 
     addComp() {
         const attach = document.querySelector("#selector")
-        
-        const header = document.createElement("h2");
-        header.innerText = "Gender Comparison";
-        attach.appendChild(header)
 
+        const filter = document.createElement("section");
+        attach.appendChild(filter);
+        filter.classList.add("filter", "js-gender");
+        
         const activitySelector = document.createElement("select");
-        attach.appendChild(activitySelector);
+        filter.appendChild(activitySelector);
         activitySelector.classList.add("selectors")
         const selectText = document.createTextNode("Select a category");
         activitySelector.appendChild(selectText);
@@ -69,7 +69,7 @@ class GenderComp {
         activitySelector.addEventListener("change", this.updateActivity)
 
         const yearSelector = document.createElement("div");
-        attach.appendChild(yearSelector);
+        filter.appendChild(yearSelector);
         yearSelector.classList.add("selectors")
         const yearsLabel = document.createElement("label");
         yearsLabel.innerText = "Years";
@@ -95,10 +95,15 @@ class GenderComp {
         yearSelector.addEventListener("change", this.updateYears)
 
         const selectionButton = document.createElement("button");
-        attach.appendChild(selectionButton);
+        filter.appendChild(selectionButton);
         selectionButton.classList.add("gender-btn", "selector-btn");
         selectionButton.innerText = "Submit Selection";
         selectionButton.addEventListener("click", this.handleSubmit)
+
+        const description = document.createElement("p");
+        filter.appendChild(description);
+        description.classList.add("description");
+        description.innerText = "Comparison of employed men and women";
     }
 }
 

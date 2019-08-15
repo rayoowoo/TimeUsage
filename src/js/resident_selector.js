@@ -6,12 +6,12 @@ class ResidentSelector {
     addSelector() {
         const attach = document.querySelector("#selector");
 
-        const header = document.createElement("h2");
-        header.innerText = "First Year Medical Resident";
-        attach.appendChild(header)
+        const filter = document.createElement("section");
+        attach.appendChild(filter);
+        filter.classList.add("filter", "js-resident");
 
         const selectionButton = document.createElement("button");
-        attach.appendChild(selectionButton);
+        filter.appendChild(selectionButton);
         selectionButton.classList.add("resident-btn", "selector-btn");
         selectionButton.innerText = "First Year Medical Resident";
         selectionButton.addEventListener("click", e => {
@@ -31,6 +31,16 @@ class ResidentSelector {
                 "Other activities": 0.1
             }
         })
+
+        const description = document.createElement("p");
+        filter.appendChild(description);
+        description.classList.add("description");
+        description.innerText = "A first-year medical resident at UCSF";
+
+        const citation = document.createElement("p");
+        filter.appendChild(citation);
+        citation.classList.add("citation");
+        citation.innerText = "Data approximated from https://www.kevinmd.com/blog/2016/02/quantitative-analysis-first-year-internal-medicine-residency.html";
     }
 }
 

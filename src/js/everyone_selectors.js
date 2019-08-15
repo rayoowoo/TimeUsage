@@ -80,12 +80,12 @@ class everyoneSelectors {
     addSelectors() {
         const attach = document.querySelector("#selector")
 
-        const header = document.createElement("h2");
-        header.innerText = "Everyone by day";
-        attach.appendChild(header)
+        const filter = document.createElement("section");
+        attach.appendChild(filter);
+        filter.classList.add("filter", "js-everyone");
 
         const activitySelector = document.createElement("div");
-        attach.appendChild(activitySelector);
+        filter.appendChild(activitySelector);
         activitySelector.classList.add("selectors")
         const activityLabel = document.createElement("label");
         activityLabel.innerText = "Activities";
@@ -111,7 +111,7 @@ class everyoneSelectors {
         activitySelector.addEventListener("change", this.updateActivity)
 
         const yearSelector = document.createElement("div");
-        attach.appendChild(yearSelector);
+        filter.appendChild(yearSelector);
         yearSelector.classList.add("selectors")
         const yearsLabel = document.createElement("label");
         yearsLabel.innerText = "Years";
@@ -138,7 +138,7 @@ class everyoneSelectors {
 
 
         const typeSelector = document.createElement("select");
-        attach.appendChild(typeSelector);
+        filter.appendChild(typeSelector);
         typeSelector.classList.add("selectors")
         typeSelector.appendChild(document.createTextNode("Select type"))
         const types = ["All days", "Nonholiday weekdays", "Weekend days and holidays"];
@@ -152,10 +152,15 @@ class everyoneSelectors {
 
 
         const selectionButton = document.createElement("button");
-        attach.appendChild(selectionButton);
+        filter.appendChild(selectionButton);
         selectionButton.classList.add("everyone-btn", "selector-btn");
         selectionButton.innerText = "Submit Selection";
         selectionButton.addEventListener("click", this.handleSubmit)
+
+        const description = document.createElement("p");
+        filter.appendChild(description);
+        description.classList.add("description");
+        description.innerText = "All persons on nonholiday weekdays or weekend days and holidays";
     }
 }
 
