@@ -23,7 +23,7 @@ h1, h2 {
 }
 
 .svg-container {
-    border: red solid 1px;
+    /* border: red solid 1px; */
     flex: 8;
     height: 80vh;
     display: flex;

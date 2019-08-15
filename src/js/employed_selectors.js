@@ -1,4 +1,6 @@
-class Selectors {
+import {ACTIVITIES} from './constants'
+
+class EmployedSelectors {
     constructor() {
         this.selection = {
             "activities": "All Activities",
@@ -8,20 +10,7 @@ class Selectors {
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.result = {
-            activities: [
-                "Personal care activities",
-                "Eating and drinking",
-                "Household activities",
-                "Purchasing goods and services",
-                "Caring for and helping household members",
-                "Caring for and helping nonhousehold members",
-                "Working and work-related activities",
-                "Educational activities",
-                "Organizational, civic, and religious activities",
-                "Leisure and sports",
-                "Telephone calls, mail, and email",
-                "Other activities"
-            ],
+            activities: ACTIVITIES,
             gender: "Total",
             years: ["2013", "2014", "2015", "2016", "2017", "2018"]
         }
@@ -41,20 +30,7 @@ class Selectors {
         let activities, years;
 
         if (selections["activities"] === "All Activities") {
-            activities = [
-                "Personal care activities",
-                "Eating and drinking",
-                "Household activities",
-                "Purchasing goods and services",
-                "Caring for and helping household members",
-                "Caring for and helping nonhousehold members",
-                "Working and work-related activities",
-                "Educational activities",
-                "Organizational, civic, and religious activities",
-                "Leisure and sports",
-                "Telephone calls, mail, and email",
-                "Other activities"
-            ];
+            activities = ACTIVITIES;
         } else {
             activities = [selections['activities']];
         }
@@ -81,9 +57,12 @@ class Selectors {
         // you can choose male, female, or both.
             // slices
         // starting with just general categories.
-            // then you can choose a category detail.
 
         const attach = document.querySelector("#selector")
+
+        const header = document.createElement("h2");
+        header.innerText = "Employed by gender";
+        attach.appendChild(header)
 
         // const datasetSelector = document.createElement("option")
 
@@ -92,19 +71,7 @@ class Selectors {
         activitySelector.classList.add("selectors")
         const selectText = document.createTextNode("Select a category");
         activitySelector.appendChild(selectText);
-        const selections = ["All Activities",
-                            "Personal care activities",
-                            "Eating and drinking", 
-                            "Household activities",
-                            "Purchasing goods and services",
-                            "Caring for and helping household members",
-                            "Caring for and helping nonhousehold members",
-                            "Working and work-related activities",
-                            "Educational activities",
-                            "Organizational, civic, and religious activities",
-                            "Leisure and sports",
-                            "Telephone calls, mail, and email",
-                            "Other activities"];
+        const selections = ["All Activities"].concat(ACTIVITIES);
         selections.forEach( select => {
             const activityOption = document.createElement("option");
             activityOption.value = select;
@@ -143,10 +110,10 @@ class Selectors {
 
         const selectionButton = document.createElement("button");
         attach.appendChild(selectionButton);
-        selectionButton.classList.add("selector-btn");
+        selectionButton.classList.add("employed-btn", "selector-btn");
         selectionButton.innerText = "Submit Selection";
         selectionButton.addEventListener("click", this.handleSubmit)
     }
 }
 
-export default Selectors;
+export default EmployedSelectors;

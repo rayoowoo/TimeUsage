@@ -3,7 +3,8 @@ class Utils {
         this.arraySum = this.arraySum.bind(this);
         this.arrayAverage = this.arrayAverage.bind(this);
         this.arrayMerge = this.arrayMerge.bind(this);
-        this.dataFilter = this.dataFilter.bind(this);
+        this.employedDataFilter = this.employedDataFilter.bind(this);
+        this.everyoneDataFilter = this.everyoneDataFilter.bind(this);
     }
 
 
@@ -36,7 +37,7 @@ class Utils {
         return final;
     }
 
-    dataFilter (activities, gender, years, data) {
+    employedDataFilter (activities, gender, years, data) {
         const activityFilter = [];
         activities.forEach( activity => {
             activityFilter.push(data[activity]);
@@ -62,6 +63,89 @@ class Utils {
 
         return result;
     }
+
+    everyoneDataFilter(activities, type, years, data) {
+        const activityFilter = [];
+        activities.forEach(activity => {
+            activityFilter.push(data[activity]);
+        })
+        const typeFilter = activityFilter.map(datum => {
+            return { [datum.activity]: datum[type] };
+        })
+
+        const finalData = typeFilter.map(datum => {
+            const yearlyFilter = [];
+            years.forEach(year => {
+                const allYears = Object.values(datum)[0];
+                yearlyFilter.push(allYears[year]);
+            })
+            return { [Object.keys(datum)[0]]: this.arrayAverage(yearlyFilter) };
+
+        })
+
+        const result = {};
+        finalData.forEach(datum => {
+            result[Object.keys(datum)[0]] = Object.values(datum)[0]
+        })
+
+        return result;
+    }
+
+    genderCompFilter(activity, years, data) {
+        const activityFilter = data[activity]
+        
+        const menFilter = { "Men": activityFilter["Men"] }
+        const womenFilter = { "Women": activityFilter["Women"]}
+
+
+        const menYearlyFilter = [];
+        years.forEach(year => {
+            const allYears = Object.values(menFilter)[0];
+            menYearlyFilter.push(allYears[year]);
+        })
+        const menData = this.arrayAverage(menYearlyFilter);
+
+        const womenYearlyFilter = [];
+        years.forEach(year => {
+            const allYears = Object.values(womenFilter)[0];
+            womenYearlyFilter.push(allYears[year]);
+        })
+        const womenData = this.arrayAverage(womenYearlyFilter);
+
+        return {
+            "Women": womenData,
+            "Men": menData
+        };
+    }
+
+    dayCompFilter(activity, years, data) {
+        const activityFilter = data[activity]
+
+        const nonFilter = { "Nonholiday weekdays": activityFilter["Nonholiday weekdays"] }
+        const holiFilter = { "Weekend days and holidays": activityFilter["Weekend days and holidays"] }
+
+
+        const nonYearlyFilter = [];
+        years.forEach(year => {
+            const allYears = Object.values(nonFilter)[0];
+            nonYearlyFilter.push(allYears[year]);
+        })
+        const nonData = this.arrayAverage(nonYearlyFilter);
+
+        const holiYearlyFilter = [];
+        years.forEach(year => {
+            const allYears = Object.values(holiFilter)[0];
+            holiYearlyFilter.push(allYears[year]);
+        })
+        const holiData = this.arrayAverage(holiYearlyFilter);
+
+        return {
+            "Weekend days and holidays": holiData,
+            "Nonholiday weekdays": nonData
+        };
+    }
+
+
 }
 
 export default Utils;

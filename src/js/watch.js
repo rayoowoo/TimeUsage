@@ -1,3 +1,5 @@
+import {COLORS} from './constants'
+
 export default (data) => {
     const margin = 0;
 
@@ -11,24 +13,6 @@ export default (data) => {
         .append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
     const radius = Math.min(width, height) / 2 - margin;
-
-    const COLORS = {
-        "Personal care activities": "red",
-        "Eating and drinking": "orange",
-        "Household activities": "yellow",
-        "Purchasing goods and services": "green",
-        "Caring for and helping household members": "blue",
-        "Caring for and helping nonhousehold members": "indigo",
-        "Working and work-related activities": "violet",
-        "Educational activities": "gray",
-        "Organizational, civic, and religious activities": "black",
-        "Leisure and sports": "cyan",
-        "Telephone calls, mail, and email": "chartreuse",
-        "Other activities": "magenta" 
-    }
-
-
-
 
     const pie = d3.pie()
         .value(function (d) { return d.value; })

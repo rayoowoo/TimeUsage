@@ -1,4 +1,4 @@
-[
+const everyoneByDay = [
   {
     "2008": 24,
     "2009": 24,
@@ -1200,3 +1200,32 @@
     "": ""
   }
 ]
+
+let data = {};
+
+const hi = everyoneByDay.filter( datum=> {return datum["Category?"] === "Y"})
+for (let i = 0; i < hi.length; i++) {
+  const datum = hi[i];
+  const title = datum["Series Title"];
+  const type = datum["Type of Days"];
+  delete datum['Category?']
+  delete datum['Type of Estimate'];
+  delete datum['Age Group'];
+  delete datum['Series ID'];
+  delete datum.Gender;
+  delete datum['Series Title'];
+  delete datum['Type of Days'];
+  delete datum[''];
+  data[title + '-' + type] = {
+    [type]: datum
+  }
+};
+
+var fs = require("fs");
+fs.writeFile('./everyoneByDayShaped.js', JSON.stringify(data, null, 4), (err) => {
+  if (err) {
+    console.error(err);
+    return;
+  };
+  console.log("File has been created");
+});
