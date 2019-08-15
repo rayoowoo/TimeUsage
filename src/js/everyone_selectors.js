@@ -19,7 +19,7 @@ class everyoneSelectors {
         e.preventDefault();
         if (e.target.checked) {
             if (e.target.value === "All Activities") {
-                document.querySelectorAll("#ev_activityOption").forEach(option => { option.checked = false })
+                document.querySelectorAll("#ev_activityOption").forEach(option => { option.checked = false; option.parentNode.classList.remove("selected") })
                 this.selection["activities"] = ["All Activities"]
             } else {
                 document.querySelector("#ev_activityOptionAll").checked = false;
@@ -39,7 +39,9 @@ class everyoneSelectors {
                 document.querySelectorAll("#ev_yearOption").forEach(option => { option.checked = false })
                 this.selection["years"] = ["All Years"]
             } else {
-                document.querySelector("#ev_yearOptionAll").checked = false;
+                const all = document.querySelector("#ev_yearOptionAll");
+                all.checked = false;
+                all.parentNode.classList.remove("selected");
                 const newArr = this.selection["years"].filter(year => { return year !== "All Years" })
                 newArr.push(e.target.value);
                 this.selection["years"] = newArr;

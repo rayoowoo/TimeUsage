@@ -1,9 +1,4 @@
-
-.selectors {
-    // width: 80%;
-    background-color: transparent;
-}
-
+// toggled classes
 .filter {
     display: none;
 }
@@ -12,16 +7,29 @@
     display: block;
 }
 
-.category-filter {
+.selected {
+    color: white;
+    background-color: #9D2A37;
+}
+
+// static classes
+
+.category-filter,
+select.selectors {
     width: 100%;
     background-color: transparent;
     border: 2px;
     padding: 10px;
-    border-top: 0.5px solid #e2e0de;
-    border-bottom: 0.5px solid #e2e0de
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
 }
 
-.category-filter:hover {
+.category-filter {
+    border-bottom: 20px solid white;
+}
+
+.category-filter:hover,
+select.selectors:hover {
     background-color: #9D2A37;
     color: white;
     cursor: pointer;
@@ -31,21 +39,36 @@
     font-weight: bold;
 }
 
-.selected {
-    color: white;
-    background-color: #9D2A37;
-}
-
 .selectors {
+    border-bottom: 1px solid white;
     padding: 5px 10px;
     font-size: 12px;
 }
 
 .selectors div {
     display: block;
-    margin: 5px 0px;
+    padding: 2px;
     display: flex;
     align-items: flex-start;
 }
+
+.selectors span {
+    margin-left: 10px;
+}
+
+.selector-btn {
+    width: 100%;
+    padding: 10px;
+    border-top: 1px solid white;
+    border-bottom: 2px solid white;
+    margin-bottom: 10px;
+}
+
+.selector-btn:hover {
+    background-color: #9D2A37;
+    cursor: pointer;
+    color: white;
+}
+
 
 // https://www.w3schools.com/howto/howto_custom_select.asp for arrow facing up.

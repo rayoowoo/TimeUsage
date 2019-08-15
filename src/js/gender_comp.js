@@ -36,10 +36,12 @@ class GenderComp {
         e.preventDefault();
         if (e.target.checked) {
             if (e.target.value === "All years") {
-                document.querySelectorAll("#g_yearOption").forEach(option => { option.checked = false })
+                document.querySelectorAll("#g_yearOption").forEach(option => { option.checked = false; option.parentNode.classList.remove("selected") })
                 this.selection["years"] = ["All years"]
             } else {
-                document.querySelector("#g_yearOptionAll").checked = false;
+                const all = document.querySelector("#g_yearOptionAll");
+                all.checked = false;
+                all.parentNode.classList.remove("selected");
                 const newArr = this.selection["years"].filter(year => { return year !== "All years" })
                 newArr.push(e.target.value);
                 this.selection["years"] = newArr;

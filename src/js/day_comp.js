@@ -21,10 +21,12 @@ class DayComp {
         e.preventDefault();
         if (e.target.checked) {
             if (e.target.value === "All years") {
-                document.querySelectorAll("#d_yearOption").forEach(option => { option.checked = false })
+                document.querySelectorAll("#d_yearOption").forEach(option => { option.checked = false; option.parentNode.classList.remove("selected") })
                 this.selection["years"] = ["All years"]
             } else {
-                document.querySelector("#d_yearOptionAll").checked = false;
+                const all = document.querySelector("#d_yearOptionAll");
+                all.checked = false;
+                all.parentNode.classList.remove("selected");
                 const newArr = this.selection["years"].filter(year => { return year !== "All years" })
                 newArr.push(e.target.value);
                 this.selection["years"] = newArr;

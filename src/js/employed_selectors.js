@@ -6,7 +6,7 @@ class EmployedSelectors {
         this.selection = {
             "activities": ["All Activities"],
             "years": ["All years"],
-            "gender": "Total"
+            "gender": "Total (men and women)"
         };
         this.updateActivity = this.updateActivity.bind(this);
         this.updateYears = this.updateYears.bind(this);
@@ -14,7 +14,7 @@ class EmployedSelectors {
         this.updateGender = this.updateGender.bind(this);
         this.result = {
             activities: ACTIVITIES,
-            gender: "Total",
+            gender: "Total (men and women)",
             years: ["2013", "2014", "2015", "2016", "2017", "2018"]
         }
     }
@@ -44,10 +44,12 @@ class EmployedSelectors {
         e.preventDefault();
         if (e.target.checked) {
             if (e.target.value === "All years") {
-                document.querySelectorAll("#e_yearOption").forEach(option => { option.checked = false })
+                document.querySelectorAll("#e_yearOption").forEach(option => { option.checked = false; option.parentNode.classList.remove("selected") })
                 this.selection["years"] = ["All years"]
             } else {
-                document.querySelector("#e_yearOptionAll").checked = false;
+                const all = document.querySelector("#e_yearOptionAll");
+                all.checked = false;
+                all.parentNode.classList.remove("selected");
                 const newArr = this.selection["years"].filter(year => { return year !== "All years" })
                 newArr.push(e.target.value);
                 this.selection["years"] = newArr;
@@ -102,7 +104,7 @@ class EmployedSelectors {
         filter.appendChild(genderSelector);
         genderSelector.classList.add("selectors")
         genderSelector.appendChild(document.createTextNode("Select gender"))
-        const genders = ["Total", "Women", "Men"];
+        const genders = ["Total (men and women)", "Women", "Men"];
         genders.forEach(select => {
             const genderOption = document.createElement("option");
             genderOption.value = select;

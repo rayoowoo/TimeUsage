@@ -104,7 +104,7 @@
     
     "Sleeping-Total": {
         "category": "",
-        "Total": {
+        "Total (men and women)": {
             "2013": 8.33,
             "2014": 8.44,
             "2015": 8.42,
@@ -115,7 +115,7 @@
     },
     "Housework-Total": {
         "category": "",
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.5,
             "2014": 0.5,
             "2015": 0.45,
@@ -126,7 +126,7 @@
     },
     "Food preparation and cleanup-Total": {
         "category": "",
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.59,
             "2014": 0.55,
             "2015": 0.57,
@@ -137,7 +137,7 @@
     },
     "Lawn and garden care-Total": {
         "category": "",
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.11,
             "2014": 0.16,
             "2015": 0.13,
@@ -148,7 +148,7 @@
     },
     "Household management-Total": {
         "category": "",
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.09,
             "2014": 0.1,
             "2015": 0.12,
@@ -159,7 +159,7 @@
     },
     "Consumer goods purchases-Total": {
         "category": "",
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.37,
             "2014": 0.33,
             "2015": 0.35,
@@ -170,7 +170,7 @@
     },
     "Professional and personal care services-Total": {
         "category": "",
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.05,
             "2014": 0.06,
             "2015": 0.06,
@@ -181,7 +181,7 @@
     },
     "Caring for and helping household children under 18-Total": {
         "category": "",
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.98,
             "2014": 0.99,
             "2015": 0.95,
@@ -192,7 +192,7 @@
     },
     "Caring for and helping nonhousehold adults-Total": {
         "category": "",
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.03,
             "2014": 0.04,
             "2015": 0.04,
@@ -203,7 +203,7 @@
     },
     "Working-Total": {
         "category": "",
-        "Total": {
+        "Total (men and women)": {
             "2013": 5.19,
             "2014": 5.32,
             "2015": 5.38,
@@ -214,7 +214,7 @@
     },
     "Attending Class-Total": {
         "category": "",
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.05,
             "2014": 0.06,
             "2015": 0.08,
@@ -225,7 +225,7 @@
     },
     "Homework and Research-Total": {
         "category": "",
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.07,
             "2014": 0.08,
             "2015": 0.09,
@@ -236,7 +236,7 @@
     },
     "Religious and spiritual activities-Total": {
         "category": "",
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.12,
             "2014": 0.12,
             "2015": 0.12,
@@ -247,7 +247,7 @@
     },
     "Volunteering (organizational and civic activities)-Total": {
         "category": "",
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.12,
             "2014": 0.14,
             "2015": 0.13,
@@ -258,7 +258,7 @@
     },
     "Socializing and communicating-Total": {
         "category": "",
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.67,
             "2014": 0.63,
             "2015": 0.63,
@@ -269,7 +269,7 @@
     },
     "Watching TV-Total": {
         "category": "",
-        "Total": {
+        "Total (men and women)": {
             "2013": 1.85,
             "2014": 1.89,
             "2015": 1.83,
@@ -280,7 +280,7 @@
     },
     "Participating in sports, exercise, and recreation (includes related waiting and security)-Total": {
         "category": "",
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.25,
             "2014": 0.23,
             "2015": 0.24,

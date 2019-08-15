@@ -176,7 +176,7 @@ const employedByGender = [
     "2018": 9.11,
     "ID": 1,
     "Series ID": "TUU10101AA01008879",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Personal care activities (includes travel)",
     "Category?": "Y",
     "": ""
@@ -190,7 +190,7 @@ const employedByGender = [
     "2018": 1.15,
     "ID": 7,
     "Series ID": "TUU10101AA01013287",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Eating and drinking (includes travel)",
     "Category?": "Y",
     "": ""
@@ -204,7 +204,7 @@ const employedByGender = [
     "2018": 1.61,
     "ID": 10,
     "Series ID": "TUU10101AA01009431",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Household activities (includes travel)",
     "Category?": "Y",
     "": ""
@@ -218,7 +218,7 @@ const employedByGender = [
     "2018": 0.67,
     "ID": 25,
     "Series ID": "TUU10101AA01012702",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Purchasing goods and services",
     "Category?": "Y",
     "": ""
@@ -232,7 +232,7 @@ const employedByGender = [
     "2018": 1.22,
     "ID": 34,
     "Series ID": "TUU10101AA01010421",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Caring for and helping household members (includes travel)",
     "Category?": "Y",
     "": ""
@@ -246,7 +246,7 @@ const employedByGender = [
     "2018": 0.11,
     "ID": 40,
     "Series ID": "TUU10101AA01011221",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Caring for and helping nonhousehold members (includes travel)",
     "Category?": "Y",
     "": ""
@@ -260,7 +260,7 @@ const employedByGender = [
     "2018": 5.74,
     "ID": 46,
     "Series ID": "TUU10101AA01012037",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Working and work-related activities (includes travel)",
     "Category?": "Y",
     "": ""
@@ -274,7 +274,7 @@ const employedByGender = [
     "2018": 0.16,
     "ID": 52,
     "Series ID": "TUU10101AA01012382",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Educational activities (includes travel)",
     "Category?": "Y",
     "": ""
@@ -288,7 +288,7 @@ const employedByGender = [
     "2018": 0.24,
     "ID": 61,
     "Series ID": "TUU10101AA01015057",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Organizational, civic, and religious activities",
     "Category?": "Y",
     "": ""
@@ -302,7 +302,7 @@ const employedByGender = [
     "2018": 3.65,
     "ID": 70,
     "Series ID": "TUU10101AA01013641",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Leisure and sports (includes travel)",
     "Category?": "Y",
     "": ""
@@ -316,7 +316,7 @@ const employedByGender = [
     "2018": 0.08,
     "ID": 82,
     "Series ID": "TUU10101AA01015633",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Telephone calls, mail, and e-mail (includes travel)",
     "Category?": "Y",
     "": ""
@@ -330,7 +330,7 @@ const employedByGender = [
     "2018": 0.28,
     "ID": 85,
     "Series ID": "TUU10101AA01015972",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Other activities, not elsewhere classified (includes misc. travel and data codes)",
     "Category?": "Y",
     "": ""
@@ -750,7 +750,7 @@ const employedByGender = [
     "2018": 8.41,
     "ID": 4,
     "Series ID": "TUU10101AA01031681",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Sleeping",
     "Category?": "",
     "": "* Includes naps and spells of sleeplessness."
@@ -764,7 +764,7 @@ const employedByGender = [
     "2018": 0.53,
     "ID": 13,
     "Series ID": "TUU10101AA01031953",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Housework",
     "Category?": "",
     "": ""
@@ -778,7 +778,7 @@ const employedByGender = [
     "2018": 0.61,
     "ID": 16,
     "Series ID": "TUU10101AA01032004",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Food preparation and cleanup",
     "Category?": "",
     "": ""
@@ -792,7 +792,7 @@ const employedByGender = [
     "2018": 0.12,
     "ID": 19,
     "Series ID": "TUU10101AA01032251",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Lawn and garden care",
     "Category?": "",
     "": ""
@@ -806,7 +806,7 @@ const employedByGender = [
     "2018": 0.1,
     "ID": 22,
     "Series ID": "TUU10101AA01036893",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Household management",
     "Category?": "",
     "": "* Excludes household and personal mail, e-mail, and messages."
@@ -820,7 +820,7 @@ const employedByGender = [
     "2018": 0.34,
     "ID": 28,
     "Series ID": "TUU10101AA01033807",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Consumer goods purchases",
     "Category?": "",
     "": ""
@@ -834,7 +834,7 @@ const employedByGender = [
     "2018": 0.04,
     "ID": 31,
     "Series ID": "TUU10101AA01033957",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Professional and personal care services",
     "Category?": "",
     "": ""
@@ -848,7 +848,7 @@ const employedByGender = [
     "2018": 1.01,
     "ID": 37,
     "Series ID": "TUU10101AA01036995",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Caring for and helping household children under 18",
     "Category?": "",
     "": ""
@@ -862,7 +862,7 @@ const employedByGender = [
     "2018": 0.05,
     "ID": 43,
     "Series ID": "TUU10101AA01037190",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Caring for and helping nonhousehold adults",
     "Category?": "",
     "": ""
@@ -876,7 +876,7 @@ const employedByGender = [
     "2018": 5.26,
     "ID": 49,
     "Series ID": "TUU10101AA01033441",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Working",
     "Category?": "",
     "": ""
@@ -890,7 +890,7 @@ const employedByGender = [
     "2018": 0.05,
     "ID": 55,
     "Series ID": "TUU10101AA01033715",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Attending Class",
     "Category?": "",
     "": ""
@@ -904,7 +904,7 @@ const employedByGender = [
     "2018": 0.09,
     "ID": 58,
     "Series ID": "TUU10101AA01033759",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Homework and Research",
     "Category?": "",
     "": ""
@@ -918,7 +918,7 @@ const employedByGender = [
     "2018": 0.1,
     "ID": 64,
     "Series ID": "TUU10101AA01035507",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Religious and spiritual activities",
     "Category?": "",
     "": ""
@@ -932,7 +932,7 @@ const employedByGender = [
     "2018": 0.11,
     "ID": 67,
     "Series ID": "TUU10101AA01037663",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Volunteering (organizational and civic activities)",
     "Category?": "",
     "": ""
@@ -946,7 +946,7 @@ const employedByGender = [
     "2018": 0.59,
     "ID": 73,
     "Series ID": "TUU10101AA01037487",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Socializing and communicating",
     "Category?": "",
     "": ""
@@ -960,7 +960,7 @@ const employedByGender = [
     "2018": 1.82,
     "ID": 76,
     "Series ID": "TUU10101AA01037524",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Watching TV",
     "Category?": "",
     "": ""
@@ -974,7 +974,7 @@ const employedByGender = [
     "2018": 0.23,
     "ID": 79,
     "Series ID": "TUU10101AA01037561",
-    "Gender": "Total",
+    "Gender": "Total (men and women)",
     "Series Title": "Participating in sports, exercise, and recreation (includes related waiting and security)",
     "Category?": "",
     "": ""

@@ -10,7 +10,7 @@ export const employedByGender = {
             "2017": 8.96,
             "2018": 8.92
         },
-        "Total": {
+        "Total (men and women)": {
             "2013": 9.1,
             "2014": 9.17,
             "2015": 9.2,
@@ -38,7 +38,7 @@ export const employedByGender = {
             "2017": 1.18,
             "2018": 1.24
         },
-        "Total": {
+        "Total (men and women)": {
             "2013": 1.17,
             "2014": 1.14,
             "2015": 1.12,
@@ -66,7 +66,7 @@ export const employedByGender = {
             "2017": 1.23,
             "2018": 1.22
         },
-        "Total": {
+        "Total (men and women)": {
             "2013": 1.56,
             "2014": 1.53,
             "2015": 1.54,
@@ -94,7 +94,7 @@ export const employedByGender = {
             "2017": 0.6,
             "2018": 0.56
         },
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.72,
             "2014": 0.65,
             "2015": 0.68,
@@ -122,7 +122,7 @@ export const employedByGender = {
             "2017": 0.93,
             "2018": 0.88
         },
-        "Total": {
+        "Total (men and women)": {
             "2013": 1.19,
             "2014": 1.2,
             "2015": 1.17,
@@ -150,7 +150,7 @@ export const employedByGender = {
             "2017": 0.1,
             "2018": 0.1
         },
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.09,
             "2014": 0.1,
             "2015": 0.09,
@@ -178,7 +178,7 @@ export const employedByGender = {
             "2017": 6.35,
             "2018": 6.47
         },
-        "Total": {
+        "Total (men and women)": {
             "2013": 5.64,
             "2014": 5.79,
             "2015": 5.85,
@@ -206,7 +206,7 @@ export const employedByGender = {
             "2017": 0.19,
             "2018": 0.11
         },
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.14,
             "2014": 0.17,
             "2015": 0.19,
@@ -234,7 +234,7 @@ export const employedByGender = {
             "2017": 0.25,
             "2018": 0.26
         },
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.28,
             "2014": 0.3,
             "2015": 0.29,
@@ -262,7 +262,7 @@ export const employedByGender = {
             "2017": 4.02,
             "2018": 3.92
         },
-        "Total": {
+        "Total (men and women)": {
             "2013": 3.73,
             "2014": 3.68,
             "2015": 3.62,
@@ -290,7 +290,7 @@ export const employedByGender = {
             "2017": 0.05,
             "2018": 0.05
         },
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.09,
             "2014": 0.07,
             "2015": 0.09,
@@ -318,7 +318,7 @@ export const employedByGender = {
             "2017": 0.16,
             "2018": 0.26
         },
-        "Total": {
+        "Total (men and women)": {
             "2013": 0.28,
             "2014": 0.21,
             "2015": 0.17,

@@ -184,6 +184,6 @@ class Utils {
 export default Utils;
 
 // dataFilter(["Other activities, not elsewhere classified (includes misc. travel and data codes)", "Telephone calls, mail, and e-mail (includes travel)"],
-// ...             "Total",
+// ...             "Total (men and women)",
 // ...["2013", "2014"],
 // ...employedByGender)

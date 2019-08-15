@@ -69,12 +69,16 @@ export const submitButton = (handleSubmit, filter, prefix) => {
 }
 
 export const activitySelect = (updateActivity, filter) => {
-    const activityLabel = document.createElement("label");
-    activityLabel.innerText = "Activities";
-    filter.appendChild(activityLabel)
     const activitySelector = document.createElement("select");
     filter.appendChild(activitySelector);
     activitySelector.classList.add("selectors")
+
+    const placeholder = document.createElement("option");
+    placeholder.innerText = "Choose an activity";
+    activitySelector.appendChild(placeholder);
+    placeholder.setAttribute("disabled", true);
+
+
     const selections = ACTIVITIES;
     selections.forEach(select => {
         const activityOption = document.createElement("option");
