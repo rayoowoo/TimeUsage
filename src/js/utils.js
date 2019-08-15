@@ -93,8 +93,17 @@ class Utils {
 
         })
 
+        const sorted = finalData.sort((a, b) => {
+            switch (Object.values(a)[0] > Object.values(b)[0]) {
+                case true:
+                    return -1;
+                default:
+                    return 1;
+            }
+        })
+
         const result = {};
-        finalData.forEach(datum => {
+        sorted.forEach(datum => {
             result[Object.keys(datum)[0]] = Object.values(datum)[0]
         })
 
@@ -122,9 +131,16 @@ class Utils {
         })
         const womenData = this.arrayAverage(womenYearlyFilter);
 
-        return {
-            "Women": womenData,
-            "Men": menData
+        if (womenData > menData) {
+            return {
+                "Women": womenData,
+                "Men": menData
+            }
+        } else {
+            return {
+                "Men": menData,
+                "Women": womenData,
+            }
         };
     }
 
@@ -148,9 +164,17 @@ class Utils {
         })
         const holiData = this.arrayAverage(holiYearlyFilter);
 
-        return {
-            "Weekend days and holidays": holiData,
-            "Nonholiday weekdays": nonData
+        if (holiData > nonData) {
+            return {
+                "Weekend days and holidays": holiData,
+                "Nonholiday weekdays": nonData
+            }
+        } else {
+            return {
+                "Nonholiday weekdays": nonData,
+                "Weekend days and holidays": holiData
+            }
+            
         };
     }
 
