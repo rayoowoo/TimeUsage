@@ -58,6 +58,7 @@ gender.addEventListener("click", e => {
     const genderData = utils.genderCompFilter(genderComp.result.activity,
         genderComp.result.years,
         employedByGender)
+        
     draw(genderData)
 })
 

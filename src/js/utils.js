@@ -99,16 +99,16 @@ class Utils {
 
 
         const menYearlyFilter = [];
+        const allMenYears = Object.values(menFilter)[0];
         years.forEach(year => {
-            const allYears = Object.values(menFilter)[0];
-            menYearlyFilter.push(allYears[year]);
+            menYearlyFilter.push(allMenYears[year]);
         })
         const menData = this.arrayAverage(menYearlyFilter);
 
         const womenYearlyFilter = [];
+        const allWomenYears = Object.values(womenFilter)[0];
         years.forEach(year => {
-            const allYears = Object.values(womenFilter)[0];
-            womenYearlyFilter.push(allYears[year]);
+            womenYearlyFilter.push(allWomenYears[year]);
         })
         const womenData = this.arrayAverage(womenYearlyFilter);
 

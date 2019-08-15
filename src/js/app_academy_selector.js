@@ -18,8 +18,8 @@ class AppAcademySelector {
             e.preventDefault();
             this.data = {
                 "Personal care activities": 6,
-                "Eating and drinking": 2,
-                "Household activities": 0.5,
+                "Eating and drinking": 1,
+                "Household activities": 1.5,
                 "Purchasing goods and services": 0.2,
                 "Caring for and helping household members": 0.1,
                 "Caring for and helping nonhousehold members": 0.4,
