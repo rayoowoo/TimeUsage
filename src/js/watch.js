@@ -1,9 +1,11 @@
 import {COLORS} from './constants'
+import Utils from './utils'
 
 export default (data) => {
     const margin = 0;
 
     let width, height;
+    const utils = new Utils();
 
     const svg = d3.select("#watch")
         .classed("svg-container", true)
@@ -25,20 +27,45 @@ export default (data) => {
     
     const final_data = pie(processed_data);
 
-    debugger
+    const total = processed_data.length;
 
-    svg
-        .selectAll('whatever')
+    const arc = d3.arc()
+        .innerRadius(radius * 0.8)
+        .outerRadius(radius)
+
+    const paths = svg
+        .selectAll()
         .data(final_data)
         .enter()
         .append('path')
-        .attr('d', d3.arc()
-            .innerRadius(radius * 0.8)
-            .outerRadius(radius)
-        )
-        .attr('fill', function(d) {return(COLORS[d.data.key])})
-        .attr("stroke", "white")
-        .style("stroke-width", "3px")
+
+    paths
+        .each( function(d, i) {
+            d3.select(this)
+                .style('fill', function (d) { return (COLORS[d.data.key]) })
+                .style("stroke", "white")
+                .style("stroke-width", "3px")
+                .transition()
+                .duration(function(d) {return d.data.percentage * 3000})
+                .delay( function(d) {
+                    if (i === 0) {
+                        return 0;
+                    }
+                    return utils.arraySum(paths.nodes().slice(0, i).map(el => d3.select(el).data()[0].data.percentage)) * 3000 - 225;
+                })
+                .attrTween('d', function (d) {
+                    const i = d3.interpolate(d.startAngle + 0.1, d.endAngle);
+                    return function (t) {
+                        d.endAngle = i(t);
+                        return arc(d);
+                    }
+                })
+            })
+}
+        
+            
+
+            
         // .style("opacity", 0.9)
 
     // window.onresize = document.location.reload;
@@ -49,4 +76,7 @@ export default (data) => {
     // for percentages
     // https://bl.ocks.org/farazshuja/e2cb52828c080ba85da5458e2304a61f
     // for labeling slices with percentages
-}
+    // http://bl.ocks.org/nadinesk/99393098950665c471e035ac517c2224
+    // for transitions
+    // https://bl.ocks.org/mbostock/1125997
+    // for chained transitions

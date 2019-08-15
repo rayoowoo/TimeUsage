@@ -55,9 +55,19 @@ class Utils {
             return {[Object.keys(datum)[0]]: this.arrayAverage(yearlyFilter)};
 
         })
-        
+
+        const sorted = finalData.sort((a, b) => {
+            switch (Object.values(a)[0] > Object.values(b)[0]) {
+            case true:
+                return -1;
+            default:
+                return 1;
+            }
+        })
+
+
         const result = {};
-        finalData.forEach (datum => {
+        sorted.forEach (datum => {
             result[Object.keys(datum)[0]] = Object.values(datum)[0]
         })
 
