@@ -2,7 +2,7 @@ import {COLORS} from './constants'
 import Utils from './utils'
 
 export default (data) => {
-    const margin = 0;
+    const margin = 10;
 
     let width, height;
     const utils = new Utils();
@@ -27,8 +27,6 @@ export default (data) => {
     
     const final_data = pie(processed_data);
 
-    const total = processed_data.length;
-
     const arc = d3.arc()
         .innerRadius(radius * 0.8)
         .outerRadius(radius)
@@ -42,16 +40,16 @@ export default (data) => {
     paths
         .each( function(d, i) {
             d3.select(this)
-                .style('fill', function (d) { return (COLORS[d.data.key]) })
-                .style("stroke", "white")
-                .style("stroke-width", "3px")
+                // .style('fill', function (d) { return (COLORS[d.data.key]) })
+                // .style('fill', 'gray')
+                .classed('arcs', true)
                 .transition()
                 .duration(function(d) {return d.data.percentage * 3000})
                 .delay( function(d) {
                     if (i === 0) {
                         return 0;
                     }
-                    return utils.arraySum(paths.nodes().slice(0, i).map(el => d3.select(el).data()[0].data.percentage)) * 3000 - 225;
+                    return utils.arraySum(paths.nodes().slice(0, i).map(el => d3.select(el).data()[0].data.percentage)) * 3000 - 200;
                 })
                 .attrTween('d', function (d) {
                     const i = d3.interpolate(d.startAngle + 0.1, d.endAngle);
@@ -68,7 +66,7 @@ export default (data) => {
             
         // .style("opacity", 0.9)
 
-    // window.onresize = document.location.reload;
+    // window.onresize = document.location.reload();
 
     // https://stackoverflow.com/questions/16265123/resize-svg-when-window-is-resized-in-d3-js
     // for responsive SVG design

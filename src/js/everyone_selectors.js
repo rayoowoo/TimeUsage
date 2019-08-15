@@ -1,4 +1,6 @@
 import { ACTIVITIES } from './constants'
+import * as Create from './create'
+
 
 class everyoneSelectors {
     constructor() {
@@ -84,57 +86,9 @@ class everyoneSelectors {
         attach.appendChild(filter);
         filter.classList.add("filter", "js-everyone");
 
-        const activitySelector = document.createElement("div");
-        filter.appendChild(activitySelector);
-        activitySelector.classList.add("selectors")
-        const activityLabel = document.createElement("label");
-        activityLabel.innerText = "Activities";
-        activitySelector.appendChild(activityLabel)
-        const activitySelections = ["All Activities"].concat(ACTIVITIES);
-        activitySelections.forEach(select => {
-            const div = document.createElement("div");
-            activitySelector.appendChild(div);
-            const span = document.createElement("span");
-            span.innerText = select;
-            const activityOption = document.createElement("input");
-            activityOption.value = select;
-            activityOption.setAttribute("type", "checkbox");
-            if (select === "All Activities") {
-                activityOption.checked = true;
-                activityOption.setAttribute("id", "ev_activityOptionAll")
-            } else {
-                activityOption.setAttribute("id", "ev_activityOption")
-            }
-            div.appendChild(activityOption);
-            div.appendChild(span);
-        })
-        activitySelector.addEventListener("change", this.updateActivity)
+        Create.activitySelector(this.updateActivity, filter, "ev");
 
-        const yearSelector = document.createElement("div");
-        filter.appendChild(yearSelector);
-        yearSelector.classList.add("selectors")
-        const yearsLabel = document.createElement("label");
-        yearsLabel.innerText = "Years";
-        yearSelector.appendChild(yearsLabel)
-        const yearSelections = ["All years", "2013", "2014", "2015", "2016", "2017", "2018"];
-        yearSelections.forEach(select => {
-            const div = document.createElement("div");
-            yearSelector.appendChild(div);
-            const span = document.createElement("span");
-            span.innerText = select;
-            const yearOption = document.createElement("input");
-            yearOption.value = select;
-            yearOption.setAttribute("type", "checkbox");
-            if (select === "All years") {
-                yearOption.checked = true;
-                yearOption.setAttribute("id", "ev_yearOptionAll")
-            } else {
-                yearOption.setAttribute("id", "ev_yearOption")
-            }
-            div.appendChild(yearOption);
-            div.appendChild(span);
-        })
-        yearSelector.addEventListener("change", this.updateYears)
+        Create.yearSelector(this.updateYears, filter, "ev", ["All years", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"]);
 
 
         const typeSelector = document.createElement("select");
@@ -151,11 +105,8 @@ class everyoneSelectors {
         typeSelector.addEventListener("change", this.updateType)
 
 
-        const selectionButton = document.createElement("button");
-        filter.appendChild(selectionButton);
-        selectionButton.classList.add("everyone-btn", "selector-btn");
-        selectionButton.innerText = "Submit Selection";
-        selectionButton.addEventListener("click", this.handleSubmit)
+        Create.submitButton(this.handleSubmit, filter, "everyone");
+
 
         const description = document.createElement("p");
         filter.appendChild(description);

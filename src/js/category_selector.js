@@ -14,6 +14,7 @@ export default () => {
 
     categories.forEach( option => {
         const categoryOption = document.createElement("option");
+        categoryOption.classList.add("option")
         categoryOption.value = option;
         categoryOption.innerText = option;
         categorySelector.appendChild(categoryOption);
@@ -22,7 +23,6 @@ export default () => {
     categorySelector.addEventListener("change", e => {
         e.preventDefault();
         const selectors = document.querySelectorAll('[class*="js-"]')
-        debugger
         selectors.forEach(selector => selector.classList.remove("display"));
         switch (e.target.value) {
             case "Employed by Gender":

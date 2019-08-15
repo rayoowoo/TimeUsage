@@ -10,6 +10,9 @@ body, h1, h2, h3, p, li, ul, ol, nav, section, header, footer, strong, div, span
 ul, ol {
   list-style: none; }
 
+*:focus {
+  outline: none; }
+
 ul {
   list-style: none;
   display: flex;
@@ -21,34 +24,79 @@ li {
   align-items: center;
   justify-content: space-evenly; }
 
-/* Watch */
 h1, h2 {
+  font-family: 'Amiri', serif;
   text-align: center; }
 
-.svg-container {
-  /* border: red solid 1px; */
-  flex: 8;
-  height: 80vh;
-  display: flex;
-  justify-content: center;
-  /* background-image: url('src/assets/images/watch-face.png');
-  background-position: center;
-  background-size: cover; */ }
+h2 {
+  font-size: 20px; }
 
-.sides {
-  flex: 3;
-  text-align: center;
-  margin: auto 40px;
-  height: 700px;
-  border: 2px solid black; }
+a:default,
+a:visited {
+  color: white; }
+
+a:hover {
+  cursor: pointer;
+  color: gray; }
 
 body {
   display: flex;
   flex-direction: column;
-  background-color: white; }
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+  align-content: space-between;
+  height: 100vh; }
+
+.title {
+  font-size: 36px;
+  background-color: black;
+  color: white;
+  font-weight: 500;
+  height: 63px; }
 
 .content {
-  display: flex; }
+  display: flex;
+  margin: 15px 0px; }
+
+.sides {
+  flex: 3;
+  margin: auto 63px;
+  height: 700px;
+  border: 0.5px solid  #e2e0de; }
+
+.footer {
+  background-color: black;
+  color: white;
+  height: 63px;
+  display: flex;
+  flex-direction: column; }
+
+.footer i {
+  font-size: 24px;
+  margin: 10px; }
+
+.footer span {
+  margin: 0 auto; }
+
+.description, .note, .citation {
+  font-size: 10px; }
+
+.arcs {
+  stroke: white;
+  stroke-width: 3px;
+  opacity: 0.2;
+  fill: #726A61; }
+
+.arcs:hover {
+  fill: #9D2A37;
+  stroke: black;
+  opacity: 1; }
+
+.svg-container {
+  flex: 8;
+  height: 85vh;
+  display: flex;
+  justify-content: center; }
 
 .selectors {
   background-color: transparent; }
@@ -59,15 +107,34 @@ body {
 .display {
   display: block; }
 
-/* dark mode CSS */
-.default {
-  background-color: white;
-  color: black;
-  border: 2px solid black; }
+.category-filter {
+  width: 100%;
+  background-color: transparent;
+  border: 2px;
+  padding: 10px;
+  border-top: 0.5px solid #e2e0de;
+  border-bottom: 0.5px solid #e2e0de; }
 
-.dark {
-  background-color: black;
+.category-filter:hover {
+  background-color: #9D2A37;
   color: white;
-  border: 2px solid white; }
+  cursor: pointer; }
+
+.selector-container label {
+  font-weight: bold; }
+
+.selected {
+  color: white;
+  background-color: #9D2A37; }
+
+.selectors {
+  padding: 5px 10px;
+  font-size: 12px; }
+
+.selectors div {
+  display: block;
+  margin: 5px 0px;
+  display: flex;
+  align-items: flex-start; }
 
 /*# sourceMappingURL=timeusage.css.map */

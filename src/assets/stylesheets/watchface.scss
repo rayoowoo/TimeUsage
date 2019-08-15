@@ -1,0 +1,19 @@
+.arcs {
+    stroke: white;
+    stroke-width: 3px;
+    opacity: 0.2;
+    fill: #726A61;
+}
+
+.arcs:hover {
+    fill: #9D2A37;
+    stroke: black;
+    opacity: 1;
+}
+
+.svg-container {
+    flex: 8;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+}

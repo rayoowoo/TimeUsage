@@ -11,65 +11,72 @@ li {
     justify-content: space-evenly;
 }
 
-/* Watch */
-
 h1, h2 {
+    font-family: 'Amiri', serif;
     text-align: center;
+
 }
 
-.svg-container {
-    /* border: red solid 1px; */
-    flex: 8;
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    /* background-image: url('src/assets/images/watch-face.png');
-    background-position: center;
-    background-size: cover; */
+h2 {
+    font-size: 20px;
 }
 
-.sides {
-    flex: 3;
-    text-align: center;
-    margin: auto 40px;
-    height: 700px;
-    border: 2px solid black;
+a:default,
+a:visited {
+    color: white;
+}
+
+a:hover {
+    cursor: pointer;
+    color: gray;
 }
 
 body {
     display: flex;
     flex-direction: column;
     background-color: white;
-    
+    font-family: 'Roboto', sans-serif;
+    align-content: space-between;
+    height: 100vh;
+}
+
+.title {
+    font-size: 36px;
+    background-color: black;
+    color: white;
+    font-weight: 500;
+    height: 63px;
 }
 
 .content {
     display: flex;
+    margin: 15px 0px;
 }
 
-.selectors {
-    // width: 80%;
-    background-color: transparent;
+.sides {
+    flex: 3;
+    margin: auto 63px;
+    height: 700px;
+    border: 0.5px solid  #e2e0de;
 }
 
-.filter {
-    display: none;
-}
-
-.display {
-    display: block;
-}
-
-/* dark mode CSS */
-
-.default {
-    background-color: white;
-    color: black;
-    border: 2px solid black;
-}
-
-.dark {
+.footer {
     background-color: black;
     color: white;
-    border: 2px solid white;
+    height: 63px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer i {
+    font-size: 24px;
+    margin: 10px;
+}
+
+.footer span {
+    margin: 0 auto;
+}
+
+.description, .note, .citation {
+    font-size: 10px;
 }

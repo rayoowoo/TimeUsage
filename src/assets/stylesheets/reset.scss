@@ -11,3 +11,7 @@
  ul, ol {
      list-style: none;
  }
+
+ *:focus {
+     outline: none;
+ }

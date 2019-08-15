@@ -1,0 +1,51 @@
+
+.selectors {
+    // width: 80%;
+    background-color: transparent;
+}
+
+.filter {
+    display: none;
+}
+
+.display {
+    display: block;
+}
+
+.category-filter {
+    width: 100%;
+    background-color: transparent;
+    border: 2px;
+    padding: 10px;
+    border-top: 0.5px solid #e2e0de;
+    border-bottom: 0.5px solid #e2e0de
+}
+
+.category-filter:hover {
+    background-color: #9D2A37;
+    color: white;
+    cursor: pointer;
+}
+
+.selector-container label {
+    font-weight: bold;
+}
+
+.selected {
+    color: white;
+    background-color: #9D2A37;
+}
+
+.selectors {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.selectors div {
+    display: block;
+    margin: 5px 0px;
+    display: flex;
+    align-items: flex-start;
+}
+
+// https://www.w3schools.com/howto/howto_custom_select.asp for arrow facing up.

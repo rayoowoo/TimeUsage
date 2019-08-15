@@ -1,4 +1,5 @@
 import {ACTIVITIES} from './constants'
+import * as Create from './create'
 
 class EmployedSelectors {
     constructor() {
@@ -21,16 +22,20 @@ class EmployedSelectors {
     updateActivity(e) {
         e.preventDefault();
         if (e.target.checked) {
+            e.target.parentNode.classList.add("selected");
             if (e.target.value === "All Activities") {
-                document.querySelectorAll("#e_activityOption").forEach (option => {option.checked = false})
+                document.querySelectorAll("#e_activityOption").forEach (option => {option.checked = false; option.parentNode.classList.remove("selected")})
                 this.selection["activities"] = ["All Activities"]
             } else {
-                document.querySelector("#e_activityOptionAll").checked = false;
+                const all = document.querySelector("#e_activityOptionAll");
+                all.checked = false;
+                all.parentNode.classList.remove("selected");
                 const newArr = this.selection["activities"].filter( activity => {return activity !== "All Activities"})
                 newArr.push(e.target.value);
                 this.selection["activities"] = newArr;
             }
         } else if (e.target.checked === false) {
+            e.target.parentNode.classList.remove("selected");
             this.selection = this.selection.filter(select => {return select !== e.target.value})
         }
     }
@@ -82,63 +87,15 @@ class EmployedSelectors {
     
     
     addSelectors() {
-        const attach = document.querySelector("#selector")
+        const attach = document.querySelector("#selector");
 
         const filter = document.createElement("section");
         attach.appendChild(filter);
         filter.classList.add("filter", "display", "js-employed");
 
-        const activitySelector = document.createElement("div");
-        filter.appendChild(activitySelector);
-        activitySelector.classList.add("selectors")
-        const activityLabel = document.createElement("label");
-        activityLabel.innerText = "Activities";
-        activitySelector.appendChild(activityLabel)
-        const activitySelections = ["All Activities"].concat(ACTIVITIES);
-        activitySelections.forEach( select => {
-            const div = document.createElement("div");
-            activitySelector.appendChild(div);
-            const span = document.createElement("span");
-            span.innerText = select;
-            const activityOption = document.createElement("input");
-            activityOption.value = select;
-            activityOption.setAttribute("type", "checkbox");
-            if (select === "All Activities") {
-                activityOption.checked = true;
-                activityOption.setAttribute("id", "e_activityOptionAll")
-            } else {
-                activityOption.setAttribute("id", "e_activityOption")
-            }
-            div.appendChild(activityOption);
-            div.appendChild(span);
-        })
-        activitySelector.addEventListener("change", this.updateActivity)
+        Create.activitySelector(this.updateActivity, filter, "e");
 
-        const yearSelector = document.createElement("div");
-        filter.appendChild(yearSelector);
-        yearSelector.classList.add("selectors")
-        const yearsLabel = document.createElement("label");
-        yearsLabel.innerText = "Years";
-        yearSelector.appendChild(yearsLabel)
-        const yearSelections = ["All years", "2013", "2014", "2015", "2016", "2017", "2018"];
-        yearSelections.forEach(select => {
-            const div = document.createElement("div");
-            yearSelector.appendChild(div);
-            const span = document.createElement("span");
-            span.innerText = select;
-            const yearOption = document.createElement("input");
-            yearOption.value = select;
-            yearOption.setAttribute("type", "checkbox");
-            if (select === "All years") {
-                yearOption.checked = true;
-                yearOption.setAttribute("id", "e_yearOptionAll")
-            } else {
-                yearOption.setAttribute("id", "e_yearOption")
-            }
-            div.appendChild(yearOption);
-            div.appendChild(span);
-        })
-        yearSelector.addEventListener("change", this.updateYears)
+        Create.yearSelector(this.updateYears, filter, "e", ["All years", "2013", "2014", "2015", "2016", "2017", "2018"]);
 
 
         const genderSelector = document.createElement("select");
@@ -154,12 +111,7 @@ class EmployedSelectors {
         })
         genderSelector.addEventListener("change", this.updateGender)
 
-
-        const selectionButton = document.createElement("button");
-        filter.appendChild(selectionButton);
-        selectionButton.classList.add("employed-btn", "selector-btn");
-        selectionButton.innerText = "Submit Selection";
-        selectionButton.addEventListener("click", this.handleSubmit)
+        Create.submitButton(this.handleSubmit, filter, "employed");
 
         const description = document.createElement("p");
         filter.appendChild(description);
