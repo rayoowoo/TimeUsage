@@ -120,9 +120,6 @@ select.selectors {
   border-top: 1px solid white;
   border-bottom: 1px solid white; }
 
-.category-filter {
-  border-bottom: 20px solid white; }
-
 .category-filter:hover,
 select.selectors:hover {
   background-color: #9D2A37;
