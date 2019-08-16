@@ -1,13 +1,13 @@
 .display-data {
-    width: 100%;
+    width: 93%;
 }
 
 .display-data li {
     border-top: 1px solid white;
     border-bottom: 1px solid white;
-    padding: 10.2px 15px;
+    padding: 10.2px 13px;
     font-size: 12px;
-    width: 93%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
@@ -15,7 +15,15 @@
 .display-data span {
     background-color: #9D2A37;
     height: 100%;
-    padding: 10px;
+    padding: 9.5px;
     font-weight: 800;
     color: white;
+    font-size: 13px;
+}
+
+.focused {
+    background-color: black;
+    color: white;
+    font-weight: 900;
+    text-transform: uppercase;
 }

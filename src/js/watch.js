@@ -2,7 +2,7 @@ import {COLORS} from './constants'
 import Utils from './utils'
 
 export default (data) => {
-    const margin = 10;
+    const margin = 14;
 
     let width, height;
     const utils = new Utils();
@@ -21,10 +21,12 @@ export default (data) => {
 
     const processed_data = d3.entries(data);
 
+    const total = utils.arraySum(processed_data.map(d => {return d.value}))
+
     processed_data.forEach(d => {
-        d.percentage = d.value / 24;
+        d.percentage = d.value / total;
     })
-    
+
     const final_data = pie(processed_data);
 
     const arc = d3.arc()
@@ -37,22 +39,27 @@ export default (data) => {
         .enter()
         .append('path')
 
+    const alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]
+
     paths
         .each( function(d, i) {
             d3.select(this)
-                // .style('fill', function (d) { return (COLORS[d.data.key]) })
-                // .style('fill', 'gray')
                 .classed('arcs', true)
+                .on("mouseover", function(d) {
+                    const el = document.querySelector(`#${alpha[i]}`);
+                    el.classList.add("focused");
+                })
+                .on("mouseout", function(d) {
+                    const el = document.querySelector(`#${alpha[i]}`);
+                    el.classList.remove("focused");
+                })
                 .transition()
                 .duration(function(d) {return d.data.percentage * 3000})
                 .delay( function(d) {
-                    if (i === 0) {
-                        return 0;
-                    }
-                    return utils.arraySum(paths.nodes().slice(0, i).map(el => d3.select(el).data()[0].data.percentage)) * 3000 - 200;
+                    return utils.arraySum(paths.nodes().slice(0, i).map(el => d3.select(el).data()[0].data.percentage)) * 3000 + 200;
                 })
                 .attrTween('d', function (d) {
-                    const i = d3.interpolate(d.startAngle + 0.1, d.endAngle);
+                    const i = d3.interpolate(d.startAngle, d.endAngle);
                     return function (t) {
                         d.endAngle = i(t);
                         return arc(d);
@@ -60,11 +67,6 @@ export default (data) => {
                 })
             })
 }
-        
-            
-
-            
-        // .style("opacity", 0.9)
 
     // window.onresize = document.location.reload();
 

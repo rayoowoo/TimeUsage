@@ -13,7 +13,7 @@ class ResidentSelector {
         const selectionButton = document.createElement("button");
         filter.appendChild(selectionButton);
         selectionButton.classList.add("resident-btn", "selector-btn");
-        selectionButton.innerText = "First Year Medical Resident";
+        selectionButton.innerText = "I can also do this.";
         selectionButton.addEventListener("click", e => {
             e.preventDefault();
             this.data = {

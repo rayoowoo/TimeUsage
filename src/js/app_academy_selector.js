@@ -13,7 +13,7 @@ class AppAcademySelector {
         const selectionButton = document.createElement("button");
         filter.appendChild(selectionButton);
         selectionButton.classList.add("app-academy-btn", "selector-btn");
-        selectionButton.innerText = "App Academy Student";
+        selectionButton.innerText = "I can do this.";
         selectionButton.addEventListener("click", e => {
             e.preventDefault();
             this.data = {
