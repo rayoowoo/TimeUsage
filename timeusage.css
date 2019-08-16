@@ -281,6 +281,14 @@ select.selectors:hover {
   cursor: pointer;
   color: white; }
 
+.theme-light .citation a {
+  color: black; }
+.theme-dark .citation a {
+  color: white; }
+
+.citation a:hover {
+  color: gray; }
+
 .display-data {
   width: 93%; }
 

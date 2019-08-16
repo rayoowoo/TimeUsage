@@ -100,3 +100,13 @@ select.selectors:hover {
     cursor: pointer;
     color: white;
 }
+
+.citation a {
+    @include themify($themes) {
+        color: themed('otherColor');
+    }
+}
+
+.citation a:hover {
+    color: gray;
+}

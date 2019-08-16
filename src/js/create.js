@@ -73,12 +73,6 @@ export const activitySelect = (updateActivity, filter) => {
     filter.appendChild(activitySelector);
     activitySelector.classList.add("selectors")
 
-    const placeholder = document.createElement("option");
-    placeholder.innerText = "Choose an activity";
-    activitySelector.appendChild(placeholder);
-    placeholder.setAttribute("disabled", true);
-
-
     const selections = ACTIVITIES;
     selections.forEach(select => {
         const activityOption = document.createElement("option");

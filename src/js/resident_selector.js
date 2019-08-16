@@ -40,7 +40,12 @@ class ResidentSelector {
         const citation = document.createElement("p");
         filter.appendChild(citation);
         citation.classList.add("citation");
-        citation.innerText = "Data approximated from https://www.kevinmd.com/blog/2016/02/quantitative-analysis-first-year-internal-medicine-residency.html";
+        citation.innerText = "Data approximated from ";
+        const a = document.createElement("a");
+        a.setAttribute("href", "https://www.kevinmd.com/blog/2016/02/quantitative-analysis-first-year-internal-medicine-residency.html");
+        a.innerText = "https://www.kevinmd.com/blog/2016/02/quantitative-analysis-first-year-internal-medicine-residency.html";
+        a.setAttribute("target", "_blank");
+        citation.appendChild(a);
     }
 }
 
