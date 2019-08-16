@@ -1,13 +1,23 @@
+@import 'themify.scss';
+@import 'theme.scss';
+
 .arcs {
-    stroke: white;
+    @include themify($themes) {
+         stroke: themed('oneColor');
+         opacity: themed('opacity');
+    }
+    // stroke: white;
     stroke-width: 3px;
-    opacity: 0.2;
+    // opacity: 0.2;
     fill: #726A61;
 }
 
 .arcs:hover {
+    @include themify($themes) {
+         stroke: themed('otherColor');
+    }
     fill: #9D2A37;
-    stroke: black;
+    // stroke: black;
     opacity: 1;
 }
 
@@ -20,7 +30,10 @@
 }
 
 .clock-background {
-    background-image: url('src/assets/images/light-clock.jpg');
+    @include themify($themes) {
+         background-image: themed('image');
+    }
+    // background-image: url('src/assets/images/light-clock.jpg');
     background-repeat: no-repeat;
     margin-top: 10px;
     margin-bottom: 20px;
@@ -30,13 +43,16 @@
     position: absolute;
     height: 85vh;
     width: 85vh;
-    left: 27.7%;
+    left: 27.45%;
     z-index: -2;
     top: 6.78%;
 }
 
 .clock-hands {
-    background-image: url('src/assets/images/light-clock-hands.png');
+    @include themify($themes) {
+         background-image: themed('minute');
+    }
+    // background-image: url('src/assets/images/light-clock-hands.png');
     background-position: 50% 50%;
     background-repeat: no-repeat;
     margin-top: 10px;
@@ -57,7 +73,10 @@
 }
 
 .clock-hands-hour {
-    background-image: url('src/assets/images/light-clock-hands-hour.png');
+    @include themify($themes) {
+         background-image: themed('hour');
+    }
+    // background-image: url('src/assets/images/light-clock-hands-hour.png');
     background-position: 50% 50%;
     background-repeat: no-repeat;
     margin-top: 10px;

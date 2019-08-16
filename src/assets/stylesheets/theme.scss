@@ -2,13 +2,19 @@ $themes: (
     light: (
         oneColor: white,
         otherColor: black,
-        image: url('src/assets/images/light-face.jpg'),
+        image: url('src/assets/images/light-clock.jpg'),
+        sideColor: rgba(0,0,0,0.05),
+        minute: url('src/assets/images/light-clock-hands.png'),
+        hour: url('src/assets/images/light-clock-hands-hour.png'),
         opacity: 0.2,
     ),
     dark: (
         oneColor: black,
         otherColor: white,
-        image: url('src/assets/images/dark-face2.jpg'),
+        image: url('src/assets/images/dark-clock.jpg'),
+        sideColor: rgba(240,240,240,0.05),
+        minute: url('src/assets/images/dark-clock-hands.png'),
+        hour: url('src/assets/images/dark-clock-hands-hour.png'),
         opacity: 0.4,
     )
 )

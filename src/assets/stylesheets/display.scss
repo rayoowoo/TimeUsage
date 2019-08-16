@@ -1,10 +1,19 @@
+@import 'themify.scss';
+@import 'theme.scss';
+
 .display-data {
     width: 93%;
 }
 
 .display-data li {
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
+    @include themify($themes) {
+         border-color: themed('oneColor');
+         color: themed('otherColor');
+    }
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    // border-top: 1px solid white;
+    // border-bottom: 1px solid white;
     padding: 10.2px 13px;
     font-size: 12px;
     width: 100%;
@@ -22,8 +31,17 @@
 }
 
 .focused {
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
+    @include themify($themes) {
+        background-color: themed('otherColor');
+    }
+    // background-color: black;
+    // color: white;
+    // text-transform: uppercase;
+}
+
+.focused p {
+    @include themify($themes) {
+        color: themed('oneColor');
+    }
+    font-weight: 900;
 }

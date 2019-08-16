@@ -10,7 +10,7 @@ import DayComp from './day_comp'
 import { employedByGender } from '../assets/data/employedByGenderDataShaped'
 import { everyoneByDay } from '../assets/data/everyoneByDayShaped'
 import Utils from './utils'
-import {drawHands} from './create';
+import {drawHands, darkModeBtn} from './create';
 
 
 class App {
@@ -26,6 +26,7 @@ class App {
         Watch(data);
         DataDisplay(data);
         drawHands();
+        darkModeBtn(this.draw, data);
     }
 
     render() {

@@ -45,12 +45,13 @@ a:hover {
   color: gray; }
 
 body {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
   font-family: 'Roboto', sans-serif;
-  align-content: space-between;
-  height: 100vh; }
+  display: flex;
+  flex-direction: column; }
+  .theme-light body {
+    background-color: white; }
+  .theme-dark body {
+    background-color: black; }
 
 .title {
   font-size: 36px;
@@ -66,10 +67,13 @@ body {
 .sides {
   flex: 3;
   margin: auto 63px;
-  height: 710px;
+  height: 70vh;
   border: 0.5px solid transparent;
-  background-color: rgba(0, 0, 0, 0.05);
   overflow: hidden; }
+  .theme-light .sides {
+    background-color: rgba(0, 0, 0, 0.05); }
+  .theme-dark .sides {
+    background-color: rgba(240, 240, 240, 0.05); }
 
 .footer {
   background-color: black;
@@ -90,16 +94,38 @@ body {
   text-align: center;
   padding: 0px 5px; }
 
+.dark-btn {
+  color: white;
+  background-color: rgba(240, 240, 240, 0.164);
+  position: absolute;
+  left: 3.5%;
+  bottom: 1%;
+  padding: 10px;
+  width: 80px;
+  text-align: center; }
+
+.dark-btn:hover {
+  border: 1px solid white;
+  cursor: pointer;
+  padding: 9px; }
+
 .arcs {
-  stroke: white;
   stroke-width: 3px;
-  opacity: 0.2;
   fill: #726A61; }
+  .theme-light .arcs {
+    stroke: white;
+    opacity: 0.2; }
+  .theme-dark .arcs {
+    stroke: black;
+    opacity: 0.4; }
 
 .arcs:hover {
   fill: #9D2A37;
-  stroke: black;
   opacity: 1; }
+  .theme-light .arcs:hover {
+    stroke: black; }
+  .theme-dark .arcs:hover {
+    stroke: white; }
 
 .svg-container {
   flex: 8;
@@ -109,7 +135,6 @@ body {
   background-color: transparent; }
 
 .clock-background {
-  background-image: url("src/assets/images/light-clock.jpg");
   background-repeat: no-repeat;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -118,12 +143,15 @@ body {
   position: absolute;
   height: 85vh;
   width: 85vh;
-  left: 27.7%;
+  left: 27.45%;
   z-index: -2;
   top: 6.78%; }
+  .theme-light .clock-background {
+    background-image: url("src/assets/images/light-clock.jpg"); }
+  .theme-dark .clock-background {
+    background-image: url("src/assets/images/dark-clock.jpg"); }
 
 .clock-hands {
-  background-image: url("src/assets/images/light-clock-hands.png");
   background-position: 50% 50%;
   background-repeat: no-repeat;
   margin-top: 10px;
@@ -136,6 +164,10 @@ body {
   left: 31.7%;
   z-index: -1;
   top: 14.35%; }
+  .theme-light .clock-hands {
+    background-image: url("src/assets/images/light-clock-hands.png"); }
+  .theme-dark .clock-hands {
+    background-image: url("src/assets/images/dark-clock-hands.png"); }
 
 @keyframes rotation {
   from {
@@ -143,7 +175,6 @@ body {
   to {
     transform: rotate(720deg); } }
 .clock-hands-hour {
-  background-image: url("src/assets/images/light-clock-hands-hour.png");
   background-position: 50% 50%;
   background-repeat: no-repeat;
   margin-top: 10px;
@@ -156,6 +187,10 @@ body {
   left: 31.7%;
   z-index: -1;
   top: 14.35%; }
+  .theme-light .clock-hands-hour {
+    background-image: url("src/assets/images/light-clock-hands-hour.png"); }
+  .theme-dark .clock-hands-hour {
+    background-image: url("src/assets/images/dark-clock-hands-hour.png"); }
 
 @keyframes reverse {
   from {
@@ -164,6 +199,10 @@ body {
     transform: rotate(-360deg); } }
 .filter {
   display: none; }
+  .theme-light .filter {
+    color: black; }
+  .theme-dark .filter {
+    color: white; }
 
 .display {
   display: block; }
@@ -177,14 +216,20 @@ body {
   background-color: #9D2A37;
   color: white; }
 
-.category-filter,
-select.selectors {
+.category-filter, select.selectors {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
   width: 100%;
   background-color: transparent;
   border: 2px;
-  padding: 10px;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white; }
+  padding: 10px; }
+  .theme-light .category-filter,
+  .theme-light select.selectors {
+    border-color: white;
+    color: black; }
+  .theme-dark .category-filter, .theme-dark select.selectors {
+    border-color: black;
+    color: white; }
 
 .category-filter {
   font-size: 14px;
@@ -201,9 +246,13 @@ select.selectors:hover {
   font-size: 14px; }
 
 .selectors {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid;
   padding: 5px 10px;
   font-size: 12px; }
+  .theme-light .selectors {
+    border-color: white; }
+  .theme-dark .selectors {
+    border-color: black; }
 
 .selectors div {
   display: block;
@@ -215,11 +264,17 @@ select.selectors:hover {
   margin-left: 10px; }
 
 .selector-btn {
+  border-top: 1px solid;
+  border-bottom: 2px solid;
   width: 100%;
   padding: 10px;
-  border-top: 1px solid white;
-  border-bottom: 2px solid white;
   margin-bottom: 10px; }
+  .theme-light .selector-btn {
+    border-color: white;
+    color: black; }
+  .theme-dark .selector-btn {
+    border-color: black;
+    color: white; }
 
 .selector-btn:hover {
   background-color: #9D2A37;
@@ -230,13 +285,19 @@ select.selectors:hover {
   width: 93%; }
 
 .display-data li {
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
   padding: 10.2px 13px;
   font-size: 12px;
   width: 100%;
   display: flex;
   justify-content: space-between; }
+  .theme-light .display-data li {
+    border-color: white;
+    color: black; }
+  .theme-dark .display-data li {
+    border-color: black;
+    color: white; }
 
 .display-data span {
   background-color: #9D2A37;
@@ -246,10 +307,16 @@ select.selectors:hover {
   color: white;
   font-size: 13px; }
 
-.focused {
-  background-color: black;
-  color: white;
-  font-weight: bold;
-  text-transform: uppercase; }
+.theme-light .focused {
+  background-color: black; }
+.theme-dark .focused {
+  background-color: white; }
+
+.focused p {
+  font-weight: 900; }
+  .theme-light .focused p {
+    color: white; }
+  .theme-dark .focused p {
+    color: black; }
 
 /*# sourceMappingURL=timeusage.css.map */

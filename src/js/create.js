@@ -102,3 +102,29 @@ export const drawHands = () => {
     hours.classList.add("clock-hands-hour");
     hands.appendChild(hours);
 }
+
+export const darkModeBtn = (draw, data) => {
+    const old = document.querySelector(".dark-btn");
+    if (old) {
+        old.parentNode.removeChild(old);
+    }
+    let text = "Dark Mode";
+    const page = document.querySelector("html");
+    if (page.classList.contains("theme-dark")) {
+        text = "Light Mode";
+    }
+
+    const btn = document.createElement("div");
+    btn.classList.add("dark-btn");
+    btn.innerText = text;
+    const footer = document.querySelector(".footer");
+    footer.appendChild(btn);
+
+    btn.addEventListener('click', e => {
+        e.preventDefault();
+        const html = document.querySelector("html");
+        html.classList.toggle("theme-dark");
+        html.classList.toggle("theme-light");
+        draw(data);
+    })
+}
