@@ -32,7 +32,7 @@ class everyoneSelectors {
             }
         } else if (e.target.checked === false) {
             e.target.parentNode.classList.remove("selected");
-            this.selection = this.selection.filter(select => { return select !== e.target.value })
+            this.selection.activities = this.selection.activities.filter(select => { return select !== e.target.value })
         }
     }
 
@@ -40,20 +40,20 @@ class everyoneSelectors {
         e.preventDefault();
         if (e.target.checked) {
             e.target.parentNode.classList.add("selected");
-            if (e.target.value === "All Years") {
-                document.querySelectorAll("#ev_yearOption").forEach(option => { option.checked = false })
-                this.selection["years"] = ["All Years"]
+            if (e.target.value === "All years") {
+                document.querySelectorAll("#ev_yearOption").forEach(option => { option.checked = false ; option.parentNode.classList.remove("selected") })
+                this.selection["years"] = ["All years"]
             } else {
                 const all = document.querySelector("#ev_yearOptionAll");
                 all.checked = false;
                 all.parentNode.classList.remove("selected");
-                const newArr = this.selection["years"].filter(year => { return year !== "All Years" })
+                const newArr = this.selection["years"].filter(year => { return year !== "All years" })
                 newArr.push(e.target.value);
                 this.selection["years"] = newArr;
             }
         } else if (e.target.checked === false) {
             e.target.parentNode.classList.remove("selected");
-            this.selection = this.selection.filter(select => { return select !== e.target.value })
+            this.selection['years'] = this.selection['years'].filter(select => { return select !== e.target.value })
         }
     }
 

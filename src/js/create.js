@@ -88,3 +88,17 @@ export const activitySelect = (updateActivity, filter) => {
     })
     activitySelector.addEventListener("change", updateActivity)
 }
+
+export const drawHands = () => {
+    const old = document.querySelectorAll('[class*="clock-hands"]');
+    old.forEach(el => {el.parentNode.removeChild(el)})
+
+    const hands = document.querySelector("#hands");
+    const minutes = document.createElement("div");
+    minutes.classList.add("clock-hands");
+    hands.appendChild(minutes);
+
+    const hours = document.createElement("div");
+    hours.classList.add("clock-hands-hour");
+    hands.appendChild(hours);
+}

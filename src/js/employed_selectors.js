@@ -36,7 +36,7 @@ class EmployedSelectors {
             }
         } else if (e.target.checked === false) {
             e.target.parentNode.classList.remove("selected");
-            this.selection = this.selection.filter(select => {return select !== e.target.value})
+            this.selection.activities = this.selection.activities.filter(select => {return select !== e.target.value})
         }
     }
 
