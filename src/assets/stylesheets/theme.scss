@@ -1,9 +1,14 @@
 $themes: (
     light: (
-        backgroundColor: white,
-        textColor: black,
-        buttonTextColor: white,
-        // bodyFont: 'Roboto',
-        // headerFont: 'Amiri',
+        oneColor: white,
+        otherColor: black,
+        image: url('src/assets/images/light-face.jpg'),
+        opacity: 0.2,
+    ),
+    dark: (
+        oneColor: black,
+        otherColor: white,
+        image: url('src/assets/images/dark-face2.jpg'),
+        opacity: 0.4,
     )
 )
