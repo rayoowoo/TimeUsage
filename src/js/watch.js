@@ -2,7 +2,7 @@ import {COLORS} from './constants'
 import Utils from './utils'
 
 export default (data) => {
-    const margin = 14;
+    const margin = 15;
 
     let width, height;
     const utils = new Utils();

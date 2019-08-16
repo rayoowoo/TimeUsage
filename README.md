@@ -1,7 +1,7 @@
 # Time Usage
 
 ## Background and Overview
-Time Usage is a data visualization of survey results from the American Time Usage Survey (ATUS), conducted from 2003 to 2018. The data is largely in average hours per day, categorized by the type of day (e.g. nonholiday weekday), and occasionally by other relevant categories (e.g. gender). 
+Time Usage is a data visualization of survey results from the American Time Usage Survey (ATUS), conducted from 2008 to 2018. The data is largely in average hours per day, categorized by the type of day (e.g. nonholiday weekday), and occasionally by other relevant categories (e.g. gender). 
 
 ## Functionality and MVPs
 
@@ -24,6 +24,8 @@ Additional features:
 * Vanilla Javascript to handle the selecting logic and shaping the data received from ATUS.
 * D3.js for injecting data into the DOM and manipulating the DOM based on the injected data.
 * CSS for styling the visulization
+* SCSS for modular CSS structure
+* Themify for employing CSS themes
 * Webpack for bundling scripts for modular composition of Javascript files
 
 ## Implementation Timeline
@@ -44,11 +46,13 @@ Additional features:
 * Add clock effect for display hours.
 
 ### Day 4
+* Dark Mode
 * Add clock effect for display hours.
 
 ### Day 5
-* Dark mode, debug, deploy. 
+* Debug, deploy. 
 
 ## Bonus Features
-* Single year selections are largely static, but multiple year selections have the option of being cycled through rather than averaged as a whole. There would be transitions as the proportions change.
-* Another clock might be beneficial for comparing and contrasting two specific years.
+* Dark mode
+* Menu transitions upon refresh.
+* Introduction modal.
