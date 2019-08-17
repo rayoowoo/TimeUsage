@@ -75,14 +75,15 @@ class everyoneSelectors {
         }
 
         if (selections.years[0] === "All years") {
-            years = ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"];
+            years = ["2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"];
         } else {
             years = selections["years"];
         }
         this.result = {
             activities: activities,
             years: years,
-            type: selections.type
+            type: selections.type,
+            filter: "Everyone by day"
         }
     }
 
@@ -96,7 +97,7 @@ class everyoneSelectors {
 
         Create.activitySelector(this.updateActivity, filter, "ev");
 
-        Create.yearSelector(this.updateYears, filter, "ev", ["All years", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"]);
+        Create.yearSelector(this.updateYears, filter, "ev", ["All years", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"]);
 
 
         const typeSelector = document.createElement("select");

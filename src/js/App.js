@@ -18,15 +18,15 @@ class App {
         this.draw = this.draw.bind(this);
     }
 
-    draw(data) {
+    draw(data, params) {
         const svg = document.querySelector("svg");
         const display = document.querySelector("#data-display ul");
         if (svg) { svg.parentNode.removeChild(svg); }
         if (display) { display.parentNode.removeChild(display); }
         Watch(data);
-        DataDisplay(data);
+        DataDisplay(data, params);
         drawHands();
-        darkModeBtn(this.draw, data);
+        darkModeBtn(this.draw, data, params);
     }
 
     render() {
@@ -53,7 +53,9 @@ class App {
             employedSelectors.result.gender,
             employedSelectors.result.years,
             employedByGender)
-        this.draw(employedData);
+        const employedParams = employedSelectors.result;
+        delete employedParams["activities"];
+        this.draw(employedData, employedParams);
 
         employed.addEventListener("click", e => {
             e.stopPropagation();
@@ -61,7 +63,10 @@ class App {
                 employedSelectors.result.gender,
                 employedSelectors.result.years,
                 employedByGender)
-            this.draw(employedData);
+
+            const params = employedSelectors.result;
+            delete params["activities"];
+            this.draw(employedData, params);
         })
 
         // selecting the gender comparison
@@ -72,7 +77,7 @@ class App {
                 genderComp.result.years,
                 employedByGender)
 
-            this.draw(genderData)
+            this.draw(genderData, genderComp.result);
         })
 
         // selecting the Everyone dataset
@@ -83,7 +88,10 @@ class App {
                 everyoneSelectors.result.type,
                 everyoneSelectors.result.years,
                 everyoneByDay)
-            this.draw(everyoneData);
+
+            const params = everyoneSelectors.result;
+            delete params["activities"];
+            this.draw(everyoneData, params);
         })
 
         // selecting the day comparison
@@ -93,21 +101,22 @@ class App {
             const dayData = utils.dayCompFilter(dayComp.result.activity,
                 dayComp.result.years,
                 everyoneByDay)
-            this.draw(dayData)
+
+            this.draw(dayData, dayComp.result);
         })
 
         // selecting the App Academy Student
         const appacademy = document.querySelector(".app-academy-btn");
         appacademy.addEventListener("click", e => {
             e.stopPropagation();
-            this.draw(appAcademySelector.data)
+            this.draw(appAcademySelector.data, {person: "App Academy Student", year: "2019"});
         })
 
         // selecting the first year resident after medical school
         const resident = document.querySelector(".resident-btn");
         resident.addEventListener("click", e => {
             e.stopPropagation();
-            this.draw(residentSelector.data)
+            this.draw(residentSelector.data, {person: "First Year Medical Resident"});
         })
     }
 }

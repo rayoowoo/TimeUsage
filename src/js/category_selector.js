@@ -6,9 +6,9 @@ export default () => {
     attach.appendChild(categorySelector);
 
     const categories = ["Employed by Gender",
-                        "Gender Comparison",
+                        "Gender Comparison (employed)",
                         "Everyone by Day",
-                        "Day Comparison",
+                        "Day Comparison (everyone)",
                         "App Academy Student",
                         "First Year Medical Resident"]
 
@@ -29,7 +29,7 @@ export default () => {
                 const employed = document.querySelector(".js-employed");
                 employed.classList.add("display");
                 break;
-            case "Gender Comparison":
+            case "Gender Comparison (employed)":
                 const gender = document.querySelector(".js-gender");
                 gender.classList.add("display");
                 break;
@@ -37,7 +37,7 @@ export default () => {
                 const everyone = document.querySelector(".js-everyone");
                 everyone.classList.add("display");
                 break;
-            case "Day Comparison":
+            case "Day Comparison (everyone)":
                 const day = document.querySelector(".js-day");
                 day.classList.add("display");
                 break;

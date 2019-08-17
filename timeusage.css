@@ -58,7 +58,9 @@ body {
   background-color: black;
   color: white;
   font-weight: 500;
-  height: 63px; }
+  height: 62px;
+  padding-top: 1px;
+  letter-spacing: 5px; }
 
 .content {
   display: flex;
@@ -68,12 +70,13 @@ body {
   flex: 3;
   margin: auto 63px;
   height: 70vh;
-  border: 0.5px solid transparent;
   overflow: hidden; }
   .theme-light .sides {
-    background-color: rgba(0, 0, 0, 0.05); }
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: white; }
   .theme-dark .sides {
-    background-color: rgba(240, 240, 240, 0.05); }
+    background-color: rgba(240, 240, 240, 0.05);
+    border-color: black; }
 
 .footer {
   background-color: black;
@@ -156,7 +159,7 @@ body {
   background-repeat: no-repeat;
   margin-top: 10px;
   animation-name: rotation;
-  animation-duration: 3.4s;
+  animation-duration: 3.3s;
   position: absolute;
   background-size: 100%;
   height: 70vh;
@@ -179,7 +182,7 @@ body {
   background-repeat: no-repeat;
   margin-top: 10px;
   animation-name: reverse;
-  animation-duration: 3.4s;
+  animation-duration: 3.3s;
   position: absolute;
   background-size: 100%;
   height: 70vh;
@@ -221,8 +224,9 @@ body {
   border-bottom: 1px solid;
   width: 100%;
   background-color: transparent;
-  border: 2px;
-  padding: 10px; }
+  padding: 10px 11px;
+  border-left: 0px;
+  border-right: 0px; }
   .theme-light .category-filter,
   .theme-light select.selectors {
     border-color: white;
@@ -235,11 +239,17 @@ body {
   font-size: 14px;
   text-transform: uppercase; }
 
-.category-filter:hover,
-select.selectors:hover {
+.category-filter:hover, select.selectors:hover {
+  border: 1px solid;
+  padding: 10px;
   background-color: #9D2A37;
   color: white;
   cursor: pointer; }
+  .theme-light .category-filter:hover,
+  .theme-light select.selectors:hover {
+    border-color: black; }
+  .theme-dark .category-filter:hover, .theme-dark select.selectors:hover {
+    border-color: white; }
 
 .selector-container label {
   font-weight: bold;
@@ -279,7 +289,13 @@ select.selectors:hover {
 .selector-btn:hover {
   background-color: #9D2A37;
   cursor: pointer;
-  color: white; }
+  color: white;
+  border: 1px solid;
+  padding: 10px 9px 11px 9px; }
+  .theme-light .selector-btn:hover {
+    border-color: black; }
+  .theme-dark .selector-btn:hover {
+    border-color: white; }
 
 .theme-light .citation a {
   color: black; }
@@ -295,7 +311,7 @@ select.selectors:hover {
 .display-data li {
   border-top: 1px solid;
   border-bottom: 1px solid;
-  padding: 10.2px 13px;
+  padding: 8.41px 13px;
   font-size: 12px;
   width: 100%;
   display: flex;
@@ -310,7 +326,7 @@ select.selectors:hover {
 .display-data span {
   background-color: #9D2A37;
   height: 100%;
-  padding: 9.5px;
+  padding: 4px;
   font-weight: 800;
   color: white;
   font-size: 13px; }
@@ -326,5 +342,24 @@ select.selectors:hover {
     color: white; }
   .theme-dark .focused p {
     color: black; }
+
+li.params {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5.2px 13px; }
+
+.params p {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  margin: 5px 0px; }
+
+.params div:first-of-type {
+  font-family: 'Amiri', serif;
+  font-weight: 800;
+  font-size: 13px;
+  margin-bottom: 5px; }
 
 /*# sourceMappingURL=timeusage.css.map */

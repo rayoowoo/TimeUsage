@@ -43,14 +43,15 @@ class DayComp {
         const selections = this.selection;
         let years;
         if (selections.years[0] === "All years") {
-            years = ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"]
+            years = ["2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"]
         } else {
             years = selections["years"];
         }
 
         this.result = {
             activity: this.selection.activity,
-            years
+            years,
+            filter: "Day Comparison (everyone)"
         }
     }
 
@@ -63,7 +64,7 @@ class DayComp {
 
         Create.activitySelect(this.updateActivity, filter);
 
-        Create.yearSelector(this.updateYears, filter, "d", ["All years", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"]);
+        Create.yearSelector(this.updateYears, filter, "d", ["All years", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"]);
 
         Create.submitButton(this.handleSubmit, filter, "day");
 

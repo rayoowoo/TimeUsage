@@ -97,7 +97,7 @@ export const drawHands = () => {
     hands.appendChild(hours);
 }
 
-export const darkModeBtn = (draw, data) => {
+export const darkModeBtn = (draw, data, params) => {
     const old = document.querySelector(".dark-btn");
     if (old) {
         old.parentNode.removeChild(old);
@@ -119,6 +119,6 @@ export const darkModeBtn = (draw, data) => {
         const html = document.querySelector("html");
         html.classList.toggle("theme-dark");
         html.classList.toggle("theme-light");
-        draw(data);
+        draw(data, params);
     })
 }

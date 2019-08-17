@@ -28,7 +28,8 @@ class GenderComp {
         }
         this.result = {
             activity: this.selection.activity,
-            years
+            years,
+            filter: "Gender Comparison (employed)"
         }
     }
 

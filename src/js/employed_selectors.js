@@ -15,7 +15,8 @@ class EmployedSelectors {
         this.result = {
             activities: ACTIVITIES,
             gender: "Total (men and women)",
-            years: ["2013", "2014", "2015", "2016", "2017", "2018"]
+            years: ["2013", "2014", "2015", "2016", "2017", "2018"],
+            filter: "Employed by Gender"
         }
     }
 
@@ -85,7 +86,8 @@ class EmployedSelectors {
         this.result = {
             activities: activities,
             years: years,
-            gender: selections.gender
+            gender: selections.gender,
+            filter: "Employed by Gender"
         }
     }
     
