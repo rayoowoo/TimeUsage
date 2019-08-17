@@ -71,7 +71,7 @@ export const submitButton = (handleSubmit, filter, prefix) => {
 export const activitySelect = (updateActivity, filter) => {
     const activitySelector = document.createElement("select");
     filter.appendChild(activitySelector);
-    activitySelector.classList.add("selectors")
+    activitySelector.classList.add("selectors", "selectors-select")
 
     const selections = ACTIVITIES;
     selections.forEach(select => {
