@@ -60,7 +60,20 @@ export default () => {
     const yesBtn = document.createElement("div");
     buttons.appendChild(yesBtn); 
     yesBtn.innerText = "Yes, please.";
-    yesBtn.addEventListener("click", nextStep("modal", "modal-display", "walkthrough-step-first", "walkthrough-display", ".category-filter"));
+    yesBtn.addEventListener("click", e => {
+        nextStep("modal", "modal-display", "walkthrough-step-first", "walkthrough-display", ".category-filter")(e);
+        createExitButton();
+    });
+
+    // Exit button
+    const createExitButton = () => {
+        const exitButton = document.createElement("div");
+        blur.appendChild(exitButton);
+        exitButton.classList.add("walkthrough-step", "exit");
+        exitButton.innerText = "Exit walkthrough";
+        exitButton.addEventListener("click", nextStep("blur", "modal-display", "exit", "walkthrough-display", null, "*"))
+    }
+
 
     // Walkthrough
     // FIRST
@@ -99,7 +112,7 @@ export default () => {
     const thirdStep = document.createElement("section");
     blur.appendChild(thirdStep);
     thirdStep.classList.add("walkthrough-step", "walkthrough-step-third");
-    thirdStep.innerText = 'As you hover over the slices of the graph, the corresponding data will light up. Note that these slices are technically proportions, and not strictly out of 24 hours. It depends on the parameters.'
+    thirdStep.innerText = 'As you hover over the slices of the graph, the corresponding data will light up, and vice versa. Note that these slices are technically proportions, and not strictly out of 24 hours. It depends on the parameters.'
 
     const thirdButton = document.createElement("div");
     thirdStep.appendChild(thirdButton);

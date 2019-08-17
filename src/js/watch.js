@@ -45,6 +45,7 @@ export default (data) => {
         .each( function(d, i) {
             d3.select(this)
                 .classed('arcs', true)
+                .classed(alpha[i], true)
                 .on("mouseover", function(d) {
                     const el = document.querySelector(`#${alpha[i]}`);
                     el.classList.add("focused");

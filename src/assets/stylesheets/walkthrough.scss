@@ -131,3 +131,16 @@
     background-color: rgba(240, 240, 240, 0.164);
     position: absolute;
 }
+
+.exit {
+    top: 2%;
+    left: 1%;
+    display: block;
+    background-color: gray;
+}
+
+.exit:hover {
+    cursor: pointer;
+    color: rgb(58, 58, 58);
+    color: white;
+}

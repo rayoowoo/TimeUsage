@@ -28,13 +28,15 @@
     font-size: 13px;
 }
 
-.focused {
+.focused,
+.display-list-items:hover {
     @include themify($themes) {
         background-color: themed('otherColor');
     }
 }
 
-.focused p {
+.focused p,
+.display-list-items:hover p {
     @include themify($themes) {
         color: themed('oneColor');
     }
@@ -62,3 +64,4 @@ li.params {
     font-size: 13px;
     margin-bottom: 5px;
 }
+

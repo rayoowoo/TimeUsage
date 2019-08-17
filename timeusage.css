@@ -201,12 +201,22 @@ body {
     opacity: 0.4; }
 
 .arcs:hover {
-  fill: var(--watch-red);
-  opacity: 1; }
+  fill: var(--watch-red); }
   .theme-light .arcs:hover {
-    stroke: black; }
+    stroke: black;
+    opacity: 1; }
   .theme-dark .arcs:hover {
-    stroke: white; }
+    stroke: white;
+    opacity: 1; }
+
+.arc-display {
+  fill: var(--watch-red); }
+  .theme-light .arc-display {
+    stroke: black;
+    opacity: 1; }
+  .theme-dark .arc-display {
+    stroke: white;
+    opacity: 1; }
 
 .svg-container {
   flex: 8;
@@ -409,16 +419,18 @@ body {
   color: white;
   font-size: 13px; }
 
-.theme-light .focused {
+.theme-light .focused,
+.theme-light .display-list-items:hover {
   background-color: black; }
-.theme-dark .focused {
+.theme-dark .focused, .theme-dark .display-list-items:hover {
   background-color: white; }
 
-.focused p {
+.focused p, .display-list-items:hover p {
   font-weight: 900; }
-  .theme-light .focused p {
+  .theme-light .focused p,
+  .theme-light .display-list-items:hover p {
     color: white; }
-  .theme-dark .focused p {
+  .theme-dark .focused p, .theme-dark .display-list-items:hover p {
     color: black; }
 
 li.params {
@@ -552,5 +564,16 @@ li.params {
 .dark-btn.component-display {
   background-color: rgba(240, 240, 240, 0.164);
   position: absolute; }
+
+.exit {
+  top: 2%;
+  left: 1%;
+  display: block;
+  background-color: gray; }
+
+.exit:hover {
+  cursor: pointer;
+  color: #3a3a3a;
+  color: white; }
 
 /*# sourceMappingURL=timeusage.css.map */

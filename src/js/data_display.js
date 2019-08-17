@@ -26,10 +26,18 @@ export default (data, params) => {
         const p = document.createElement("p");
         p.innerText = datum;
         li.setAttribute("id", alpha[i])
+        li.classList.add("display-list-items")
         li.appendChild(p);
         const span = document.createElement("span");
         span.innerText = data[datum].toFixed(2);
         li.appendChild(span);
+        const arc = document.querySelector(`.${alpha[i]}`);
+        li.addEventListener("mouseover", e => {
+            arc.classList.add("arc-display");
+        })
+        li.addEventListener("mouseout", e => {
+            arc.classList.remove("arc-display");
+        })
     })
 
 

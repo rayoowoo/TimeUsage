@@ -7,6 +7,7 @@ $themes: (
         minute: url('src/assets/images/light-clock-hands.png'),
         hour: url('src/assets/images/light-clock-hands-hour.png'),
         opacity: 0.2,
+        solid: 1
     ),
     dark: (
         oneColor: black,
@@ -16,5 +17,6 @@ $themes: (
         minute: url('src/assets/images/dark-clock-hands.png'),
         hour: url('src/assets/images/dark-clock-hands-hour.png'),
         opacity: 0.4,
+        solid: 1
     )
 )

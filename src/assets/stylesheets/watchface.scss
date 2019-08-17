@@ -13,9 +13,17 @@
 .arcs:hover {
     @include themify($themes) {
          stroke: themed('otherColor');
+         opacity: themed('solid');
     }
     fill: var(--watch-red);
-    opacity: 1;
+}
+
+.arc-display {
+    @include themify($themes) {
+         stroke: themed('otherColor');
+         opacity: themed('solid');
+    }
+    fill: var(--watch-red);
 }
 
 .svg-container {
