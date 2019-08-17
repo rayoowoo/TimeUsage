@@ -1,3 +1,4 @@
+import instructions from './instruction'
 import Watch from './watch'
 import CategorySelector from './category_selector'
 import EmployedSelectors from './employed_selectors'
@@ -31,6 +32,8 @@ class App {
 
     render() {
         const utils = new Utils();
+
+        instructions();
 
         const categorySelector = CategorySelector();
 

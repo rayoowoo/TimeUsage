@@ -15,7 +15,7 @@
 
 .selected {
     color: white;
-    background-color: #9D2A37;
+    background-color: var(--watch-red);
 }
 
 // static classes
@@ -23,7 +23,7 @@
 
 .headers {
     width: 100%;
-    background-color: #9D2A37;
+    background-color: var(--watch-red);
     color: white;
 }
 
@@ -57,7 +57,7 @@ select.selectors:hover {
     }
     border: 1px solid;
     padding: 10px;
-    background-color: #9D2A37;
+    background-color: var(--watch-red);
     color: white;
     cursor: pointer;
 }
@@ -100,7 +100,7 @@ select.selectors:hover {
 }
 
 .selector-btn:hover {
-    background-color: #9D2A37;
+    background-color: var(--watch-red);
     cursor: pointer;
     color: white;
     @include themify($themes) {

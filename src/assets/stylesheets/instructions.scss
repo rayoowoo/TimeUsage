@@ -1,0 +1,80 @@
+.blur {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 5;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background-color: white;
+    width: 500px;
+    height: 350px;
+    opacity: 1;
+    padding: 40px;
+    border: 1px solid black;
+    animation-name: expand;
+    animation-duration: 1s;
+    color: black;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0px 0px 2px black;
+}
+
+@keyframes expand {
+    from {width: 200px; height: 350px; opacity: 0.0;}
+    to {width: 500px; height: 350px; opacity: 1;}
+}
+
+.modal-display {
+    display: flex;
+}
+
+.modal-title {
+    font-size: 30px;
+    font-family: 'Amiri', serif;
+    letter-spacing: 1.5px;
+    margin-top: 6.5%;
+}
+
+.modal-title,
+.modal-question {
+    margin-bottom: 15px;
+}
+
+.modal-description {
+    margin-bottom: 40px;
+}
+
+.modal-question {
+    font-weight: bold;
+}
+
+.modal-buttons {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.modal-buttons div {
+    background-color: lightgray;
+    border: solid 1px black;
+    justify-content: center;
+    margin: 5px auto;
+    width: 40%;
+    font-size: 13px;
+    padding: 10px;
+    text-align: center;
+}
+
+.modal-buttons div:hover {
+    background-color: var(--watch-red);
+    color: white;
+    cursor: pointer;
+    font-weight: 900;
+}

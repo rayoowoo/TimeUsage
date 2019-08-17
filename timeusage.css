@@ -13,6 +13,185 @@ ul, ol {
 *:focus {
   outline: none; }
 
+.blur {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
+  display: none;
+  align-items: center;
+  justify-content: center; }
+
+.modal {
+  background-color: white;
+  width: 500px;
+  height: 350px;
+  opacity: 1;
+  padding: 40px;
+  border: 1px solid black;
+  animation-name: expand;
+  animation-duration: 1s;
+  color: black;
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: 0px 0px 2px black; }
+
+@keyframes expand {
+  from {
+    width: 200px;
+    height: 350px;
+    opacity: 0.0; }
+  to {
+    width: 500px;
+    height: 350px;
+    opacity: 1; } }
+.modal-display {
+  display: flex; }
+
+.modal-title {
+  font-size: 30px;
+  font-family: 'Amiri', serif;
+  letter-spacing: 1.5px;
+  margin-top: 6.5%; }
+
+.modal-title,
+.modal-question {
+  margin-bottom: 15px; }
+
+.modal-description {
+  margin-bottom: 40px; }
+
+.modal-question {
+  font-weight: bold; }
+
+.modal-buttons {
+  display: flex;
+  flex-direction: column-reverse; }
+
+.modal-buttons div {
+  background-color: lightgray;
+  border: solid 1px black;
+  justify-content: center;
+  margin: 5px auto;
+  width: 40%;
+  font-size: 13px;
+  padding: 10px;
+  text-align: center; }
+
+.modal-buttons div:hover {
+  background-color: var(--watch-red);
+  color: white;
+  cursor: pointer;
+  font-weight: 900; }
+
+.walkthrough-step {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: #535353 solid 1px;
+  box-shadow: 0px 0px 5px #242424;
+  font-size: 14px;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: justify;
+  animation-name: step;
+  animation-duration: 0.75s;
+  opacity: 1; }
+
+@keyframes step {
+  from {
+    opacity: 0.0; }
+  to {
+    opacity: 1; } }
+.walkthrough-step-first {
+  width: 330px;
+  top: 18.5%;
+  left: 22.4%; }
+
+.walkthrough-step-second {
+  width: 330px;
+  top: 40%;
+  left: 22.4%; }
+
+.walkthrough-step-third {
+  width: 350px;
+  right: 22.4%; }
+
+.walkthrough-step-fourth {
+  width: 220px;
+  bottom: 6.5%;
+  left: 3.5%; }
+
+.walkthrough-step-button {
+  border: 1px solid black;
+  margin: 10px 0px 0px 85%;
+  text-align: center;
+  font-size: 12px;
+  padding: 3px;
+  font-weight: bold;
+  color: white;
+  background-color: var(--watch-red); }
+
+.walkthrough-step-third .walkthrough-step-button {
+  margin-left: 80%; }
+
+.walkthrough-step-fourth .walkthrough-step-button {
+  margin-left: 70%; }
+
+.walkthrough-step-button:hover {
+  cursor: pointer;
+  background-color: #7e212b; }
+
+.walkthrough-display {
+  display: block; }
+
+.left-triangle {
+  border-right: 15px solid white;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  position: absolute; }
+
+.right-triangle {
+  border-left: 15px solid white;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  position: absolute; }
+
+.down-triangle {
+  border-top: 15px solid white;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  position: absolute; }
+
+.up-triangle {
+  border-bottom: 15px solid white;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  position: absolute; }
+
+.walkthrough-first-triangle,
+.walkthrough-second-triangle {
+  top: 5px;
+  left: -6px; }
+
+.walkthrough-third-triangle-a {
+  top: 5px;
+  right: -6px; }
+
+.walkthrough-third-triangle-b {
+  top: -6px;
+  left: 50%; }
+
+.walkthrough-fourth-triangle {
+  bottom: -6px; }
+
+:root {
+  --watch-red: #9D2A37; }
+
 ul {
   list-style: none;
   display: flex;
@@ -123,7 +302,7 @@ body {
     opacity: 0.4; }
 
 .arcs:hover {
-  fill: #9D2A37;
+  fill: var(--watch-red);
   opacity: 1; }
   .theme-light .arcs:hover {
     stroke: black; }
@@ -212,11 +391,11 @@ body {
 
 .selected {
   color: white;
-  background-color: #9D2A37; }
+  background-color: var(--watch-red); }
 
 .headers {
   width: 100%;
-  background-color: #9D2A37;
+  background-color: var(--watch-red);
   color: white; }
 
 .category-filter, select.selectors {
@@ -242,7 +421,7 @@ body {
 .category-filter:hover, select.selectors:hover {
   border: 1px solid;
   padding: 10px;
-  background-color: #9D2A37;
+  background-color: var(--watch-red);
   color: white;
   cursor: pointer; }
   .theme-light .category-filter:hover,
@@ -287,7 +466,7 @@ body {
     color: white; }
 
 .selector-btn:hover {
-  background-color: #9D2A37;
+  background-color: var(--watch-red);
   cursor: pointer;
   color: white;
   border: 1px solid;
@@ -324,7 +503,7 @@ body {
     color: white; }
 
 .display-data span {
-  background-color: #9D2A37;
+  background-color: var(--watch-red);
   height: 100%;
   padding: 4px;
   font-weight: 800;

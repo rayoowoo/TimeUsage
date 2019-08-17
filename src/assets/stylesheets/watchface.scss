@@ -14,7 +14,7 @@
     @include themify($themes) {
          stroke: themed('otherColor');
     }
-    fill: #9D2A37;
+    fill: var(--watch-red);
     opacity: 1;
 }
 

@@ -13,7 +13,7 @@ class ResidentSelector {
         const selectionButton = document.createElement("button");
         filter.appendChild(selectionButton);
         selectionButton.classList.add("resident-btn", "selector-btn");
-        selectionButton.innerText = "I can also do this.";
+        selectionButton.innerText = "Submit Selection";
         selectionButton.addEventListener("click", e => {
             e.preventDefault();
             this.data = {
@@ -35,7 +35,7 @@ class ResidentSelector {
         const description = document.createElement("p");
         filter.appendChild(description);
         description.classList.add("description");
-        description.innerText = "A first-year medical resident at UCSF";
+        description.innerText = "A first-year medical resident at UCSF. Not from ATUS.";
 
         const citation = document.createElement("p");
         filter.appendChild(citation);

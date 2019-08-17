@@ -13,7 +13,7 @@ class AppAcademySelector {
         const selectionButton = document.createElement("button");
         filter.appendChild(selectionButton);
         selectionButton.classList.add("app-academy-btn", "selector-btn");
-        selectionButton.innerText = "I can do this.";
+        selectionButton.innerText = "Submit Selection";
         selectionButton.addEventListener("click", e => {
             e.preventDefault();
             this.data = {
@@ -35,7 +35,7 @@ class AppAcademySelector {
         const description = document.createElement("p");
         filter.appendChild(description);
         description.classList.add("description");
-        description.innerText = "The typical App Academy student";
+        description.innerText = "The typical App Academy student. Not from ATUS.";
     }
 }
 

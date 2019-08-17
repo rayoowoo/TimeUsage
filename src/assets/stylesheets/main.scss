@@ -1,6 +1,10 @@
 @import 'themify.scss';
 @import 'theme.scss';
 
+:root {
+    --watch-red: #9D2A37;
+}
+
 ul {
     list-style: none;
     display: flex;

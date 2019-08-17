@@ -1,0 +1,119 @@
+.walkthrough-step {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: rgb(83, 83, 83) solid 1px;
+    box-shadow: 0px 0px 5px rgb(36, 36, 36);
+    font-size: 14px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: justify;
+    animation-name: step;
+    animation-duration: 0.75s;
+    opacity: 1; 
+}
+
+@keyframes step {
+    from {opacity: 0.0;}
+    to {opacity: 1;}
+}
+
+.walkthrough-step-first {
+    width: 330px;
+    top: 18.5%;
+    left: 22.4%;
+}
+
+.walkthrough-step-second {
+    width: 330px;
+    top: 40%;
+    left: 22.4%;
+}
+
+.walkthrough-step-third {
+    width: 350px;
+    right: 22.4%;
+}
+
+.walkthrough-step-fourth {
+    width: 220px;
+    bottom: 6.5%;
+    left: 3.5%;
+}
+
+.walkthrough-step-button {
+    border: 1px solid black;
+    margin: 10px 0px 0px 85%;
+    text-align: center;
+    font-size: 12px;
+    padding: 3px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--watch-red);
+}
+
+.walkthrough-step-third .walkthrough-step-button {
+    margin-left: 80%;
+}
+
+.walkthrough-step-fourth .walkthrough-step-button {
+    margin-left: 70%;
+}
+
+.walkthrough-step-button:hover {
+    cursor: pointer;
+    background-color: rgb(126, 33, 43);;
+
+}
+
+.walkthrough-display {
+    display: block;
+}
+
+.left-triangle {
+    border-right: 15px solid white;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    position: absolute;
+}
+
+.right-triangle {
+    border-left: 15px solid white;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    position: absolute;
+}
+
+.down-triangle {
+    border-top: 15px solid white;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    position: absolute;
+}
+
+.up-triangle {
+    border-bottom: 15px solid white;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    position: absolute;
+}
+
+.walkthrough-first-triangle,
+.walkthrough-second-triangle {
+    top: 5px;
+    left: -6px;
+}
+
+.walkthrough-third-triangle-a {
+    top: 5px;
+    right: -6px;
+}
+
+.walkthrough-third-triangle-b {
+    top: -6px;
+    left: 50%;
+}
+
+.walkthrough-fourth-triangle {
+    bottom: -6px;
+}
