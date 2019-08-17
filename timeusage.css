@@ -88,107 +88,6 @@ ul, ol {
   cursor: pointer;
   font-weight: 900; }
 
-.walkthrough-step {
-  display: none;
-  position: absolute;
-  background-color: white;
-  border: #535353 solid 1px;
-  box-shadow: 0px 0px 5px #242424;
-  font-size: 14px;
-  padding: 10px;
-  box-sizing: border-box;
-  text-align: justify;
-  animation-name: step;
-  animation-duration: 0.75s;
-  opacity: 1; }
-
-@keyframes step {
-  from {
-    opacity: 0.0; }
-  to {
-    opacity: 1; } }
-.walkthrough-step-first {
-  width: 330px;
-  top: 18.5%;
-  left: 22.4%; }
-
-.walkthrough-step-second {
-  width: 330px;
-  top: 40%;
-  left: 22.4%; }
-
-.walkthrough-step-third {
-  width: 350px;
-  right: 22.4%; }
-
-.walkthrough-step-fourth {
-  width: 220px;
-  bottom: 6.5%;
-  left: 3.5%; }
-
-.walkthrough-step-button {
-  border: 1px solid black;
-  margin: 10px 0px 0px 85%;
-  text-align: center;
-  font-size: 12px;
-  padding: 3px;
-  font-weight: bold;
-  color: white;
-  background-color: var(--watch-red); }
-
-.walkthrough-step-third .walkthrough-step-button {
-  margin-left: 80%; }
-
-.walkthrough-step-fourth .walkthrough-step-button {
-  margin-left: 70%; }
-
-.walkthrough-step-button:hover {
-  cursor: pointer;
-  background-color: #7e212b; }
-
-.walkthrough-display {
-  display: block; }
-
-.left-triangle {
-  border-right: 15px solid white;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  position: absolute; }
-
-.right-triangle {
-  border-left: 15px solid white;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  position: absolute; }
-
-.down-triangle {
-  border-top: 15px solid white;
-  border-right: 15px solid transparent;
-  border-left: 15px solid transparent;
-  position: absolute; }
-
-.up-triangle {
-  border-bottom: 15px solid white;
-  border-right: 15px solid transparent;
-  border-left: 15px solid transparent;
-  position: absolute; }
-
-.walkthrough-first-triangle,
-.walkthrough-second-triangle {
-  top: 5px;
-  left: -6px; }
-
-.walkthrough-third-triangle-a {
-  top: 5px;
-  right: -6px; }
-
-.walkthrough-third-triangle-b {
-  top: -6px;
-  left: 50%; }
-
-.walkthrough-fourth-triangle {
-  bottom: -6px; }
-
 :root {
   --watch-red: #9D2A37; }
 
@@ -398,38 +297,6 @@ body {
   background-color: var(--watch-red);
   color: white; }
 
-.category-filter, select.selectors {
-  border-top: 1px solid;
-  border-bottom: 1px solid;
-  width: 100%;
-  background-color: transparent;
-  padding: 10px 11px;
-  border-left: 0px;
-  border-right: 0px; }
-  .theme-light .category-filter,
-  .theme-light select.selectors {
-    border-color: white;
-    color: black; }
-  .theme-dark .category-filter, .theme-dark select.selectors {
-    border-color: black;
-    color: white; }
-
-.category-filter {
-  font-size: 14px;
-  text-transform: uppercase; }
-
-.category-filter:hover, select.selectors:hover {
-  border: 1px solid;
-  padding: 10px;
-  background-color: var(--watch-red);
-  color: white;
-  cursor: pointer; }
-  .theme-light .category-filter:hover,
-  .theme-light select.selectors:hover {
-    border-color: black; }
-  .theme-dark .category-filter:hover, .theme-dark select.selectors:hover {
-    border-color: white; }
-
 .selector-container label {
   font-weight: bold;
   font-size: 14px; }
@@ -451,6 +318,38 @@ body {
 
 .selectors span {
   margin-left: 10px; }
+
+.category-filter, .selectors-select {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  width: 100%;
+  background-color: transparent;
+  padding: 10px 11px;
+  border-left: 0px;
+  border-right: 0px; }
+  .theme-light .category-filter,
+  .theme-light .selectors-select {
+    border-color: white;
+    color: black; }
+  .theme-dark .category-filter, .theme-dark .selectors-select {
+    border-color: black;
+    color: white; }
+
+.category-filter {
+  font-size: 14px;
+  text-transform: uppercase; }
+
+.category-filter:hover, .selectors-select:hover {
+  border: 1px solid;
+  padding: 10px;
+  background-color: var(--watch-red);
+  color: white;
+  cursor: pointer; }
+  .theme-light .category-filter:hover,
+  .theme-light .selectors-select:hover {
+    border-color: black; }
+  .theme-dark .category-filter:hover, .theme-dark .selectors-select:hover {
+    border-color: white; }
 
 .selector-btn {
   border-top: 1px solid;
@@ -540,5 +439,118 @@ li.params {
   font-weight: 800;
   font-size: 13px;
   margin-bottom: 5px; }
+
+.walkthrough-step {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: #535353 solid 1px;
+  box-shadow: 0px 0px 5px #242424;
+  font-size: 14px;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: justify;
+  animation-name: step;
+  animation-duration: 0.75s;
+  opacity: 1;
+  z-index: 15; }
+
+@keyframes step {
+  from {
+    opacity: 0.0; }
+  to {
+    opacity: 1; } }
+.walkthrough-step-first {
+  width: 330px;
+  top: 18.5%;
+  left: 22.4%; }
+
+.walkthrough-step-second {
+  width: 330px;
+  top: 40%;
+  left: 22.4%; }
+
+.walkthrough-step-third {
+  width: 350px;
+  right: 22.4%; }
+
+.walkthrough-step-fourth {
+  width: 220px;
+  bottom: 6.5%;
+  left: 3.5%; }
+
+.walkthrough-step-button {
+  border: 1px solid black;
+  margin: 10px 0px 0px 85%;
+  text-align: center;
+  font-size: 12px;
+  padding: 3px;
+  font-weight: bold;
+  color: white;
+  background-color: var(--watch-red); }
+
+.walkthrough-step-third .walkthrough-step-button {
+  margin-left: 80%; }
+
+.walkthrough-step-fourth .walkthrough-step-button {
+  margin-left: 70%; }
+
+.walkthrough-step-button:hover {
+  cursor: pointer;
+  background-color: #7e212b; }
+
+.walkthrough-display {
+  display: block; }
+
+.left-triangle {
+  border-right: 15px solid white;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  position: absolute; }
+
+.right-triangle {
+  border-left: 15px solid white;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  position: absolute; }
+
+.down-triangle {
+  border-top: 15px solid white;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  position: absolute; }
+
+.up-triangle {
+  border-bottom: 15px solid white;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  position: absolute; }
+
+.walkthrough-first-triangle,
+.walkthrough-second-triangle {
+  top: 5px;
+  left: -6px; }
+
+.walkthrough-third-triangle-a {
+  top: 5px;
+  right: -6px; }
+
+.walkthrough-third-triangle-b {
+  top: -6px;
+  left: 50%; }
+
+.walkthrough-fourth-triangle {
+  bottom: -6px; }
+
+.component-display {
+  position: relative;
+  z-index: 10;
+  background-color: white;
+  animation-name: step;
+  animation-duration: 0.75s; }
+
+.dark-btn.component-display {
+  background-color: rgba(240, 240, 240, 0.164);
+  position: absolute; }
 
 /*# sourceMappingURL=timeusage.css.map */

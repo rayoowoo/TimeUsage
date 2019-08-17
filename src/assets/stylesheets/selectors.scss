@@ -27,41 +27,6 @@
     color: white;
 }
 
-.category-filter,
-select.selectors {
-    @include themify($themes) {
-         border-color: themed('oneColor');
-         color: themed('otherColor');
-    }
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-    width: 100%;
-    background-color: transparent;
-    padding: 10px 11px;
-    border-left: 0px;
-    border-right: 0px;
-    // border-top: 1px solid white;
-    // border-bottom: 1px solid white;
-}
-
-.category-filter {
-    font-size: 14px;
-    text-transform: uppercase;
-
-}
-
-.category-filter:hover,
-select.selectors:hover {
-    @include themify($themes) {
-        border-color: themed('otherColor');
-    }
-    border: 1px solid;
-    padding: 10px;
-    background-color: var(--watch-red);
-    color: white;
-    cursor: pointer;
-}
-
 .selector-container label {
     font-weight: bold;
     font-size: 14px;
@@ -85,6 +50,41 @@ select.selectors:hover {
 
 .selectors span {
     margin-left: 10px;
+}
+
+.category-filter,
+.selectors-select {
+    @include themify($themes) {
+         border-color: themed('oneColor');
+         color: themed('otherColor');
+    }
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    width: 100%;
+    background-color: transparent;
+    padding: 10px 11px;
+    border-left: 0px;
+    border-right: 0px;
+    // border-top: 1px solid white;
+    // border-bottom: 1px solid white;
+}
+
+.category-filter {
+    font-size: 14px;
+    text-transform: uppercase;
+
+}
+
+.category-filter:hover,
+.selectors-select:hover {
+    @include themify($themes) {
+        border-color: themed('otherColor');
+    }
+    border: 1px solid;
+    padding: 10px;
+    background-color: var(--watch-red);
+    color: white;
+    cursor: pointer;
 }
 
 .selector-btn {

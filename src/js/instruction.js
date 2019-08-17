@@ -32,13 +32,21 @@ export default () => {
     buttons.classList.add("modal-buttons");
     modal.appendChild(buttons);
 
-    const nextStep = (option, className, next, nextClass) => e => {
+    const nextStep = (option, className, next, nextClass, nextComponent, prevComponent) => e => {
         e.preventDefault();
         const closeModal = document.querySelector(`.${option}`);
         closeModal.classList.remove(className);
         if (next) {
             const nextItem = document.querySelector(`.${next}`);
             nextItem.classList.add(nextClass)
+        }
+        if (nextComponent) {
+            const nextComp = document.querySelectorAll(`${nextComponent}`);
+            nextComp.forEach( el => el.classList.add("component-display"))
+        }
+        if (prevComponent) {
+            const prevComp = document.querySelectorAll(`${prevComponent}`);
+            prevComp.forEach( el => el.classList.remove("component-display"))
         }
     }
     
@@ -52,7 +60,7 @@ export default () => {
     const yesBtn = document.createElement("div");
     buttons.appendChild(yesBtn); 
     yesBtn.innerText = "Yes, please.";
-    yesBtn.addEventListener("click", nextStep("modal", "modal-display", "walkthrough-step-first", "walkthrough-display"));
+    yesBtn.addEventListener("click", nextStep("modal", "modal-display", "walkthrough-step-first", "walkthrough-display", ".category-filter"));
 
     // Walkthrough
     // FIRST
@@ -65,7 +73,7 @@ export default () => {
     firstStep.appendChild(firstButton);
     firstButton.classList.add("walkthrough-step-button");
     firstButton.innerText = "Got it";
-    firstButton.addEventListener("click", nextStep("walkthrough-step-first", "walkthrough-display", "walkthrough-step-second", "walkthrough-display"))
+    firstButton.addEventListener("click", nextStep("walkthrough-step-first", "walkthrough-display", "walkthrough-step-second", "walkthrough-display", ".selectors", ".category-filter"))
 
     const firstTriangle = document.createElement("div");
     firstTriangle.classList.add("left-triangle", "walkthrough-first-triangle");
@@ -81,7 +89,7 @@ export default () => {
     secondStep.appendChild(secondButton);
     secondButton.classList.add("walkthrough-step-button");
     secondButton.innerText = "Great";
-    secondButton.addEventListener("click", nextStep("walkthrough-step-second", "walkthrough-display", "walkthrough-step-third", "walkthrough-display"))
+    secondButton.addEventListener("click", nextStep("walkthrough-step-second", "walkthrough-display", "walkthrough-step-third", "walkthrough-display", "#c",".selectors"))
 
     const secondTriangle = document.createElement("div");
     secondTriangle.classList.add("left-triangle", "walkthrough-second-triangle");
@@ -97,7 +105,7 @@ export default () => {
     thirdStep.appendChild(thirdButton);
     thirdButton.classList.add("walkthrough-step-button");
     thirdButton.innerText = "Awesome";
-    thirdButton.addEventListener("click", nextStep("walkthrough-step-third", "walkthrough-display", "walkthrough-step-fourth", "walkthrough-display"))
+    thirdButton.addEventListener("click", nextStep("walkthrough-step-third", "walkthrough-display", "walkthrough-step-fourth", "walkthrough-display", ".dark-btn", "#c"))
 
     const thirdTriangleA = document.createElement("div");
     thirdTriangleA.classList.add("right-triangle", "walkthrough-third-triangle-a");
@@ -117,7 +125,7 @@ export default () => {
     fourthStep.appendChild(fourthButton);
     fourthButton.classList.add("walkthrough-step-button");
     fourthButton.innerText = "I'm ready";
-    fourthButton.addEventListener("click", nextStep("blur", "modal-display"))
+    fourthButton.addEventListener("click", nextStep("blur", "modal-display", null, null, null, ".dark-btn"))
 
     const fourthTriangle = document.createElement("div");
     fourthTriangle.classList.add("down-triangle", "walkthrough-fourth-triangle");

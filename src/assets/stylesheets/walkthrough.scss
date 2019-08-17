@@ -11,6 +11,7 @@
     animation-name: step;
     animation-duration: 0.75s;
     opacity: 1; 
+    z-index: 15;
 }
 
 @keyframes step {
@@ -116,4 +117,17 @@
 
 .walkthrough-fourth-triangle {
     bottom: -6px;
+}
+
+.component-display {
+    position: relative;
+    z-index: 10;
+    background-color: white;
+    animation-name: step;
+    animation-duration: 0.75s;
+}
+
+.dark-btn.component-display {
+    background-color: rgba(240, 240, 240, 0.164);
+    position: absolute;
 }

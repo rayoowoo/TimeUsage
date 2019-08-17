@@ -106,7 +106,7 @@ class EmployedSelectors {
 
         const genderSelector = document.createElement("select");
         filter.appendChild(genderSelector);
-        genderSelector.classList.add("selectors")
+        genderSelector.classList.add("selectors", "selectors-select")
         genderSelector.appendChild(document.createTextNode("Select gender"))
         const genders = ["Total (men and women)", "Women", "Men"];
         genders.forEach(select => {
