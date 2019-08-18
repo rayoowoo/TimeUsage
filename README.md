@@ -1,7 +1,9 @@
 # Time Usage
 
 ## Background and Overview
-Time Usage is a data visualization of survey results from the American Time Usage Survey (ATUS), conducted from 2008 to 2018. The data is largely in average hours per day, categorized by the type of day (e.g. nonholiday weekday), and occasionally by other relevant categories (e.g. gender). 
+Time Usage is a data visualization of survey results from the American Time Usage Survey (ATUS), conducted from 2009 to 2018, by the Bureau of Labor Statistics. The data is largely in average hours per day, categorized by the type of day (e.g. nonholiday weekday), and occasionally by other relevant categories (e.g. gender). More information about the survey can be found on [their website](https://www.bls.gov/tus/).
+
+(Click here)[https://rayoowoo.github.io/TimeUsage] for the live app.
 
 ## Functionality and MVPs
 
@@ -33,7 +35,7 @@ Additional features:
 ### Day 1
 * Setup webpack, package.json.
 * Create basic layout of the selectors, clock, and printed data areas.
-* Gather and organize necessary data from the Department of Labor website (https://www.bls.gov/tus/).
+* Gather and organize necessary data from the Department of Labor [website](https://www.bls.gov/tus/).
 * Studying D3, with particular emphasis on pie charts. 
 
 ### Day 2
@@ -54,5 +56,4 @@ Additional features:
 
 ## Bonus Features
 * Dark mode
-* Menu transitions upon refresh.
 * Introduction modal.
