@@ -182,3 +182,11 @@ export const otherSelector = (filter, category, options, update) => {
     })
     selector.addEventListener("change", update) 
 }
+
+export const selectButton = (filter, category) => {
+    const button = document.createElement("button");
+    filter.appendChild(button);
+    button.classList.add(`${category}-btn`, "selector-btn");
+    button.innerText = "Submit Selection";
+    return button;
+}

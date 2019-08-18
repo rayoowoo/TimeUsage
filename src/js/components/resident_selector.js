@@ -9,9 +9,7 @@ class ResidentSelector {
         const attach = document.querySelector("#selector");
         const filter = Create.filters(attach, "resident")
 
-        const selectionButton = document.createElement("button");
-        filter.appendChild(selectionButton);
-        selectionButton.classList.add("resident-btn", "selector-btn");
+        const selectionButton = Create.selectButton(filter, "resident");
         selectionButton.innerText = "Submit Selection";
         selectionButton.addEventListener("click", e => {
             e.preventDefault();
@@ -30,6 +28,7 @@ class ResidentSelector {
                 "Educational activities": 0,
             }
         })
+        
         Create.description(filter, "A first-year medical resident at UCSF. Not from ATUS.")
 
         const citation = document.createElement("p");

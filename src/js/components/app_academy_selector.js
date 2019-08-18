@@ -9,10 +9,7 @@ class AppAcademySelector {
         const attach = document.querySelector("#selector");
         const filter = Create.filters(attach, "app")
     
-        const selectionButton = document.createElement("button");
-        filter.appendChild(selectionButton);
-        selectionButton.classList.add("app-academy-btn", "selector-btn");
-        selectionButton.innerText = "Submit Selection";
+        const selectionButton = Create.selectButton(filter, "app-academy");
         selectionButton.addEventListener("click", e => {
             e.preventDefault();
             this.data = {
@@ -30,7 +27,7 @@ class AppAcademySelector {
                 "Organizational, civic, and religious activities": 0
             }
         })
-
+        
         Create.description(filter, "The typical App Academy student. Not from ATUS.")
 
     }

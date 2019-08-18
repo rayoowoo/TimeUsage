@@ -8,8 +8,6 @@ class EmployedSelectors {
             "years": ["All years"],
             "gender": "Total (men and women)"
         };
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.updateGender = this.updateGender.bind(this);
         this.result = {
             activities: ACTIVITIES,
             gender: "Total (men and women)",
@@ -26,7 +24,7 @@ class EmployedSelectors {
     handleSubmit(e) {
         e.preventDefault();
         const selections = this.selection;
-        const activities = selection["activities"][0] === "All Activities" ? ACTIVITIES : selections['activities'];
+        const activities = selections["activities"][0] === "All Activities" ? ACTIVITIES : selections['activities'];
         const years = selections.years[0] === "All years" ? ["2013", "2014", "2015", "2016", "2017", "2018"] : selections["years"]
         this.result = {
             activities: activities,
@@ -41,8 +39,8 @@ class EmployedSelectors {
         const filter = Create.filters(attach, "employed")
         Create.activitySelector(filter, "e", this);
         Create.yearSelector(filter, "e", ["All years", "2013", "2014", "2015", "2016", "2017", "2018"], this);
-        Create.otherSelector(filter, "gender", ["Total (men and women)", "Women", "Men"], this.updateGender)
-        Create.submitButton(this.handleSubmit, filter, "employed");
+        Create.otherSelector(filter, "gender", ["Total (men and women)", "Women", "Men"], this.updateGender.bind(this))
+        Create.submitButton(this.handleSubmit.bind(this), filter, "employed");
         Create.description(filter, "Employed men and women on an average day")
     }
 }
