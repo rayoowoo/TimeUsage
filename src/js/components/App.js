@@ -8,10 +8,10 @@ import AppAcademySelector from './app_academy_selector';
 import ResidentSelector from './resident_selector';
 import GenderComp from './gender_comp'
 import DayComp from './day_comp'
-import { employedByGender } from '../assets/data/employedByGenderDataShaped'
-import { everyoneByDay } from '../assets/data/everyoneByDayShaped'
-import Utils from './utils'
-import {drawHands, darkModeBtn} from './create';
+import { employedByGender } from '../../assets/data/employedByGenderDataShaped'
+import { everyoneByDay } from '../../assets/data/everyoneByDayShaped'
+import Utils from '../helpers/utils'
+import {drawHands, darkModeBtn} from '../helpers/create';
 
 
 class App {
@@ -33,8 +33,10 @@ class App {
     render() {
         const utils = new Utils();
 
+        // instructions modal
         instructions();
 
+        // making all the selectors
         const categorySelector = CategorySelector();
 
         const employedSelectors = new EmployedSelectors();

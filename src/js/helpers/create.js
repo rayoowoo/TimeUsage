@@ -1,6 +1,8 @@
 import {ACTIVITIES} from './constants'
+import * as Update from './update'
 
-export const activitySelector = (updateActivity, filter, prefix) => {
+
+export const activitySelector = (filter, prefix) => {
     const activitySelector = document.createElement("div");
     filter.appendChild(activitySelector);
     activitySelector.classList.add("selectors")
@@ -27,10 +29,10 @@ export const activitySelector = (updateActivity, filter, prefix) => {
         div.appendChild(activityOption);
         div.appendChild(span);
     })
-    activitySelector.addEventListener("change", updateActivity)
+    activitySelector.addEventListener("change", Update.activity(prefix));
 }
 
-export const yearSelector = (updateYears, filter, prefix, years) => {
+export const yearSelector = (filter, prefix, years) => {
     const yearSelector = document.createElement("div");
     filter.appendChild(yearSelector);
     yearSelector.classList.add("selectors", "year-selector")
@@ -57,7 +59,7 @@ export const yearSelector = (updateYears, filter, prefix, years) => {
         div.appendChild(yearOption);
         div.appendChild(span);
     })
-    yearSelector.addEventListener("change", updateYears)
+    yearSelector.addEventListener("change", Update.years(prefix))
 }
 
 export const submitButton = (handleSubmit, filter, prefix) => {
@@ -121,4 +123,38 @@ export const darkModeBtn = (draw, data, params) => {
         html.classList.toggle("theme-light");
         draw(data, params);
     })
+}
+
+export const steps = (blur, order, stepText, buttonText, triangleDirection) => {
+    const step = document.createElement("section");
+    blur.appendChild(step);
+    step.classList.add("walkthrough-step", `walkthrough-step-${order}`);
+    step.innerText = stepText;
+
+    const button = document.createElement("div");
+    step.appendChild(button);
+    button.classList.add("walkthrough-step-button");
+    button.innerText = buttonText;
+
+    if (order === "third") {
+        const triangleA = document.createElement("div");
+        triangleA.classList.add("right-triangle", "walkthrough-third-triangle-a");
+        step.appendChild(triangleA);
+
+        const triangleB = document.createElement("div");
+        triangleB.classList.add("up-triangle", "walkthrough-third-triangle-b");
+        step.appendChild(triangleB);
+    } else {
+        const triangle = document.createElement("div");
+        triangle.classList.add(`${triangleDirection}-triangle`, `walkthrough-${order}-triangle`);
+        step.appendChild(triangle);
+    }
+    return button;
+}
+
+export const description = (filter, words) => {
+    const description = document.createElement("p");
+    filter.appendChild(description);
+    description.classList.add("description");
+    description.innerText = words;
 }

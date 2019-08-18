@@ -178,12 +178,26 @@ class Utils {
         };
     }
 
+    nextStep(option, className, next, nextClass, nextComponent, prevComponent) {
+        return e => {
+            e.preventDefault();
+            const closeModal = document.querySelector(`.${option}`);
+            closeModal.classList.remove(className);
+            if (next) {
+                const nextItem = document.querySelector(`.${next}`);
+                nextItem.classList.add(nextClass)
+            }
+            if (nextComponent) {
+                const nextComp = document.querySelectorAll(`${nextComponent}`);
+                nextComp.forEach(el => el.classList.add("component-display"))
+            }
+            if (prevComponent) {
+                const prevComp = document.querySelectorAll(`${prevComponent}`);
+                prevComp.forEach(el => el.classList.remove("component-display"))
+            }
+        }
+    }
 
 }
 
 export default Utils;
-
-// dataFilter(["Other activities, not elsewhere classified (includes misc. travel and data codes)", "Telephone calls, mail, and e-mail (includes travel)"],
-// ...             "Total (men and women)",
-// ...["2013", "2014"],
-// ...employedByGender)

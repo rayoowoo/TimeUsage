@@ -1,5 +1,5 @@
-import {COLORS} from './constants'
-import Utils from './utils'
+import {alpha} from '../helpers/constants'
+import Utils from '../helpers/utils'
 
 export default (data) => {
     const margin = 15;
@@ -16,31 +16,37 @@ export default (data) => {
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
     const radius = Math.min(width, height) / 2 - margin;
 
+    // setting the parameters of the pie
     const pie = d3.pie()
         .value(function (d) { return d.value; })
 
+    // formatting the data object received into an array of POJOS with the keys "key" and "value" and values correspondingly. 
     const processed_data = d3.entries(data);
 
+    // total of the values, used to calculate percentage.
     const total = utils.arraySum(processed_data.map(d => {return d.value}))
 
+    // assigning each data entry a percentage value
     processed_data.forEach(d => {
         d.percentage = d.value / total;
     })
 
+    // turning the data values into a pie graph, with the d.values being how much of the total donut. 
     const final_data = pie(processed_data);
 
+    // defining the method to make arcs. since we have an inner radius and an outer radius, this is a donut. 
     const arc = d3.arc()
         .innerRadius(radius * 0.8)
         .outerRadius(radius)
 
+    // all the paths made from the data values. 
     const paths = svg
         .selectAll()
         .data(final_data)
         .enter()
         .append('path')
 
-    const alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]
-
+    // making the arcs for each path, setting listeners, and creating the transitions. 
     paths
         .each( function(d, i) {
             d3.select(this)
@@ -57,7 +63,7 @@ export default (data) => {
                 .transition()
                 .duration(function(d) {return d.data.percentage * 3000})
                 .delay( function(d) {
-                    return utils.arraySum(paths.nodes().slice(0, i).map(el => d3.select(el).data()[0].data.percentage)) * 3000 + 200;
+                    return utils.arraySum(paths.nodes().slice(0, i).map(el => d3.select(el).data()[0].data.percentage)) * 3000 + 200; // this line is literally just to calculate the delay such that the transitions are one after the other.
                 })
                 .attrTween('d', function (d) {
                     const i = d3.interpolate(d.startAngle, d.endAngle);

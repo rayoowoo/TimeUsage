@@ -1,3 +1,5 @@
+import * as Create from '../helpers/create'
+
 class ResidentSelector {
     constructor() {
         this.data = {};
@@ -31,11 +33,7 @@ class ResidentSelector {
                 "Educational activities": 0,
             }
         })
-
-        const description = document.createElement("p");
-        filter.appendChild(description);
-        description.classList.add("description");
-        description.innerText = "A first-year medical resident at UCSF. Not from ATUS.";
+        Create.description(filter, "A first-year medical resident at UCSF. Not from ATUS.")
 
         const citation = document.createElement("p");
         filter.appendChild(citation);

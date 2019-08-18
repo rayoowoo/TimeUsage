@@ -1,3 +1,5 @@
+import * as Create from '../helpers/create'
+
 class AppAcademySelector {
     constructor() {
         this.data = {};
@@ -32,10 +34,8 @@ class AppAcademySelector {
             }
         })
 
-        const description = document.createElement("p");
-        filter.appendChild(description);
-        description.classList.add("description");
-        description.innerText = "The typical App Academy student. Not from ATUS.";
+        Create.description(filter, "The typical App Academy student. Not from ATUS.")
+
     }
 }
 
