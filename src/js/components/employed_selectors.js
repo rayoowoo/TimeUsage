@@ -26,54 +26,24 @@ class EmployedSelectors {
     handleSubmit(e) {
         e.preventDefault();
         const selections = this.selection;
-        let activities, years;
-
-        if (selections["activities"][0] === "All Activities") {
-            activities = ACTIVITIES;
-        } else {
-            activities = selections['activities'];
-        }
-
-        if (selections.years[0] === "All years") {
-            years = ["2013", "2014", "2015", "2016", "2017", "2018"];
-        } else {
-            years = selections["years"];
-        }
+        const activities = selection["activities"][0] === "All Activities" ? ACTIVITIES : selections['activities'];
+        const years = selections.years[0] === "All years" ? ["2013", "2014", "2015", "2016", "2017", "2018"] : selections["years"]
         this.result = {
             activities: activities,
             years: years,
             gender: selections.gender,
             filter: "Employed by Gender"
         }
-
     }
     
     addSelectors() {
         const attach = document.querySelector("#selector");
-
-        const filter = document.createElement("section");
-        attach.appendChild(filter);
-        filter.classList.add("filter", "display", "js-employed");
-
-        Create.activitySelector(filter, "e");
-        Create.yearSelector(filter, "e", ["All years", "2013", "2014", "2015", "2016", "2017", "2018"]);
-
-        const genderSelector = document.createElement("select");
-        filter.appendChild(genderSelector);
-        genderSelector.classList.add("selectors", "selectors-select")
-        genderSelector.appendChild(document.createTextNode("Select gender"))
-        const genders = ["Total (men and women)", "Women", "Men"];
-        genders.forEach(select => {
-            const genderOption = document.createElement("option");
-            genderOption.value = select;
-            genderOption.innerText = select;
-            genderSelector.appendChild(genderOption)
-        })
-        genderSelector.addEventListener("change", this.updateGender)
-
+        const filter = Create.filters(attach, "employed")
+        Create.activitySelector(filter, "e", this);
+        Create.yearSelector(filter, "e", ["All years", "2013", "2014", "2015", "2016", "2017", "2018"], this);
+        Create.otherSelector(filter, "gender", ["Total (men and women)", "Women", "Men"], this.updateGender)
         Create.submitButton(this.handleSubmit, filter, "employed");
         Create.description(filter, "Employed men and women on an average day")
-
     }
 }
 

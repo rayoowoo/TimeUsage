@@ -18,13 +18,7 @@ class DayComp {
     handleSubmit(e) {
         e.preventDefault();
         const selections = this.selection;
-        let years;
-        if (selections.years[0] === "All years") {
-            years = ["2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"]
-        } else {
-            years = selections["years"];
-        }
-
+        const years = select.years[0] === "All years" ? ["2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"] : selections["years"];
         this.result = {
             activity: this.selection.activity,
             years,
@@ -34,15 +28,10 @@ class DayComp {
 
     addComp() {
         const attach = document.querySelector("#selector")
-
-        const filter = document.createElement("section");
-        attach.appendChild(filter);
-        filter.classList.add("filter", "js-day");
-
+        const filter = Create.filters(attach, "day")
         Create.activitySelect(this.updateActivity, filter);
-        Create.yearSelector(filter, "d", ["All years", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"]);
+        Create.yearSelector(filter, "d", ["All years", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"],this);
         Create.submitButton(this.handleSubmit, filter, "day");
-
         Create.description(filter, "Comparison of nonholiday weekdays against weekend days and holidays")
         
     }

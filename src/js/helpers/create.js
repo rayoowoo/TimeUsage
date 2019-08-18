@@ -2,7 +2,7 @@ import {ACTIVITIES} from './constants'
 import * as Update from './update'
 
 
-export const activitySelector = (filter, prefix) => {
+export const activitySelector = (filter, prefix, that) => {
     const activitySelector = document.createElement("div");
     filter.appendChild(activitySelector);
     activitySelector.classList.add("selectors")
@@ -29,10 +29,10 @@ export const activitySelector = (filter, prefix) => {
         div.appendChild(activityOption);
         div.appendChild(span);
     })
-    activitySelector.addEventListener("change", Update.activity(prefix));
+    activitySelector.addEventListener("change", Update.activity(prefix, that));
 }
 
-export const yearSelector = (filter, prefix, years) => {
+export const yearSelector = (filter, prefix, years, that) => {
     const yearSelector = document.createElement("div");
     filter.appendChild(yearSelector);
     yearSelector.classList.add("selectors", "year-selector")
@@ -59,7 +59,7 @@ export const yearSelector = (filter, prefix, years) => {
         div.appendChild(yearOption);
         div.appendChild(span);
     })
-    yearSelector.addEventListener("change", Update.years(prefix))
+    yearSelector.addEventListener("change", Update.years(prefix, that))
 }
 
 export const submitButton = (handleSubmit, filter, prefix) => {
@@ -157,4 +157,28 @@ export const description = (filter, words) => {
     filter.appendChild(description);
     description.classList.add("description");
     description.innerText = words;
+}
+
+export const filters = (attach, category) => {
+    const filter = document.createElement("section");
+    attach.appendChild(filter);
+    filter.classList.add("filter", `js-${category}`);
+    if (category === "employed") {
+        filter.classList.add("display");
+    }
+    return filter;
+}
+
+export const otherSelector = (filter, category, options, update) => {
+    const selector = document.createElement("select");
+    filter.appendChild(selector);
+    selector.classList.add("selectors", "selectors-select")
+    selector.appendChild(document.createTextNode(`Select ${category}`))
+    options.forEach(select => {
+        const option = document.createElement("option");
+        option.value = select;
+        option.innerText = select;
+        selector.appendChild(option)
+    })
+    selector.addEventListener("change", update) 
 }

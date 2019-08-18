@@ -7,10 +7,7 @@ class AppAcademySelector {
 
     addSelector() {
         const attach = document.querySelector("#selector");
-
-        const filter = document.createElement("section");
-        attach.appendChild(filter);
-        filter.classList.add("filter", "js-app");
+        const filter = Create.filters(attach, "app")
     
         const selectionButton = document.createElement("button");
         filter.appendChild(selectionButton);

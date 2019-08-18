@@ -37,7 +37,7 @@ class App {
         instructions();
 
         // making all the selectors
-        const categorySelector = CategorySelector();
+        CategorySelector();
 
         const employedSelectors = new EmployedSelectors();
         employedSelectors.addSelectors();
