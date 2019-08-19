@@ -146,7 +146,7 @@ body {
 
 .sides {
   flex: 3;
-  margin: auto 63px;
+  margin: auto 30px;
   height: 75vh;
   overflow: hidden; }
   .theme-light .sides {
@@ -309,12 +309,12 @@ body {
 
 .selector-container label {
   font-weight: bold;
-  font-size: 14px; }
+  font-size: 15px; }
 
 .selectors {
   border-bottom: 1px solid;
   padding: 5px 10px;
-  font-size: 12px; }
+  font-size: 13px; }
   .theme-light .selectors {
     border-color: white; }
   .theme-dark .selectors {
@@ -399,8 +399,8 @@ body {
 .display-data li {
   border-top: 1px solid;
   border-bottom: 1px solid;
-  padding: 8.41px 13px;
-  font-size: 12px;
+  padding: 7.91px 13px;
+  font-size: 13px;
   width: 100%;
   display: flex;
   justify-content: space-between; }
@@ -414,10 +414,10 @@ body {
 .display-data span {
   background-color: var(--watch-red);
   height: 100%;
-  padding: 4px;
+  padding: 5px;
   font-weight: 800;
   color: white;
-  font-size: 13px; }
+  font-size: 13.5px; }
 
 .theme-light .focused,
 .theme-light .display-list-items:hover {
