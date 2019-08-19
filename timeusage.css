@@ -147,7 +147,7 @@ body {
 .sides {
   flex: 3;
   margin: auto 63px;
-  height: 70vh;
+  height: 75vh;
   overflow: hidden; }
   .theme-light .sides {
     background-color: rgba(0, 0, 0, 0.05);
