@@ -6,7 +6,7 @@ $themes: (
         sideColor: rgba(0,0,0,0.05),
         minute: url('src/assets/images/light-clock-hands.png'),
         hour: url('src/assets/images/light-clock-hands-hour.png'),
-        opacity: 0.2,
+        opacity: 0.4,
         solid: 1
     ),
     dark: (
@@ -16,7 +16,7 @@ $themes: (
         sideColor: rgba(240,240,240,0.05),
         minute: url('src/assets/images/dark-clock-hands.png'),
         hour: url('src/assets/images/dark-clock-hands-hour.png'),
-        opacity: 0.4,
+        opacity: 0.7,
         solid: 1
     )
 )

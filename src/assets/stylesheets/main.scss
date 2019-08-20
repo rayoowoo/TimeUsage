@@ -5,6 +5,13 @@
     --watch-red: #9D2A37;
 }
 
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+// https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll
+
 ul {
     list-style: none;
     display: flex;
@@ -75,7 +82,7 @@ body {
     flex: 3;
     margin: auto 30px;
     height: 75vh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .footer {

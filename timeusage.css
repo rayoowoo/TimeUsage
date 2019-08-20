@@ -91,6 +91,12 @@ ul, ol {
 :root {
   --watch-red: #9D2A37; }
 
+::-webkit-scrollbar {
+  width: 0px;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */ }
+
 ul {
   list-style: none;
   display: flex;
@@ -148,7 +154,7 @@ body {
   flex: 3;
   margin: auto 30px;
   height: 75vh;
-  overflow: hidden; }
+  overflow-x: hidden; }
   .theme-light .sides {
     background-color: rgba(0, 0, 0, 0.05);
     border-color: white; }
@@ -191,14 +197,13 @@ body {
   padding: 9px; }
 
 .arcs {
-  stroke-width: 3px;
-  fill: #726A61; }
+  stroke-width: 2px; }
   .theme-light .arcs {
     stroke: white;
-    opacity: 0.2; }
+    opacity: 0.4; }
   .theme-dark .arcs {
     stroke: black;
-    opacity: 0.4; }
+    opacity: 0.7; }
 
 .arcs:hover {
   fill: var(--watch-red); }
@@ -307,6 +312,9 @@ body {
   background-color: var(--watch-red);
   color: white; }
 
+.selector-container {
+  overflow-y: auto; }
+
 .selector-container label {
   font-weight: bold;
   font-size: 15px; }
@@ -314,7 +322,7 @@ body {
 .selectors {
   border-bottom: 1px solid;
   padding: 5px 10px;
-  font-size: 13px; }
+  font-size: 0.75em; }
   .theme-light .selectors {
     border-color: white; }
   .theme-dark .selectors {
@@ -400,7 +408,7 @@ body {
   border-top: 1px solid;
   border-bottom: 1px solid;
   padding: 7.91px 13px;
-  font-size: 13px;
+  font-size: 0.75em;
   width: 100%;
   display: flex;
   justify-content: space-between; }
@@ -417,7 +425,7 @@ body {
   padding: 5px;
   font-weight: 800;
   color: white;
-  font-size: 13.5px; }
+  font-size: 0.9em; }
 
 .theme-light .focused,
 .theme-light .display-list-items:hover {

@@ -1,4 +1,4 @@
-import {alpha} from '../helpers/constants'
+import {alpha, COLORS} from '../helpers/constants'
 import Utils from '../helpers/utils'
 
 export default (data) => {
@@ -51,6 +51,9 @@ export default (data) => {
         .each( function(d, i) {
             d3.select(this)
                 .classed('arcs', true)
+                // .style('fill', function (d) { return `rgb(${255 * (1 - d.data.percentage)}, 42, 55)` })
+                // .style('fill', function(d) {return `rgba(157, 42, 55, ${d.data.percentage})`})
+                .style('fill', COLORS[i])
                 .classed(alpha[i], true)
                 .on("mouseover", function(d) {
                     const el = document.querySelector(`#${alpha[i]}`);
