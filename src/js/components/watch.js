@@ -2,7 +2,7 @@ import {alpha, COLORS} from '../helpers/constants'
 import Utils from '../helpers/utils'
 
 export default (data) => {
-    const margin = 15;
+    const margin = window.innerHeight * 0.085;
 
     let width, height;
     const utils = new Utils();
@@ -10,7 +10,7 @@ export default (data) => {
     const svg = d3.select("#watch")
         .classed("svg-container", true)
         .append("svg")
-        .attr("width", function (d) { width = this.parentNode.clientWidth; return width })
+        .attr("width", function (d) { width = this.parentNode.clientHeight; return width })
         .attr("height", function (d) { height = this.parentNode.clientHeight; return height })
         .append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");

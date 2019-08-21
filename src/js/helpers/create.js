@@ -113,8 +113,8 @@ export const darkModeBtn = (draw, data, params) => {
     const btn = document.createElement("div");
     btn.classList.add("dark-btn");
     btn.innerText = text;
-    const footer = document.querySelector(".footer");
-    footer.appendChild(btn);
+    const body = document.querySelector("body");
+    body.appendChild(btn);
 
     btn.addEventListener('click', e => {
         e.preventDefault();
