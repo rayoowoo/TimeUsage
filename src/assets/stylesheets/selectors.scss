@@ -28,7 +28,9 @@
 }
 
 .selector-container {
+    height: 70vh;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .selector-container label {

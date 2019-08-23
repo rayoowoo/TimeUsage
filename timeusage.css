@@ -156,9 +156,8 @@ body {
 
 .sides {
   flex: 3;
-  margin: 3.75% 30px;
+  margin: 5vh 30px;
   height: 75vh;
-  overflow-x: hidden;
   position: relative;
   z-index: 2; }
   .theme-light .sides {
@@ -332,7 +331,9 @@ body {
   color: white; }
 
 .selector-container {
-  overflow-y: auto; }
+  height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden; }
 
 .selector-container label {
   font-weight: bold;
@@ -421,16 +422,19 @@ body {
   color: gray; }
 
 .display-data {
-  width: 93%; }
+  height: 70vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column; }
 
 .display-data li {
   border-top: 1px solid;
   border-bottom: 1px solid;
   padding: 7.91px 13px;
   font-size: 0.83em;
-  width: 100%;
-  display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  align-items: center;
+  width: 93%; }
   .theme-light .display-data li {
     border-color: white;
     color: black; }
@@ -440,11 +444,14 @@ body {
 
 .display-data span {
   background-color: var(--watch-red);
-  height: 100%;
   padding: 5px;
   font-weight: 800;
   color: white;
-  font-size: 0.9em; }
+  font-size: 0.9em;
+  display: inline-block; }
+
+.display-data p {
+  display: inline-block; }
 
 .theme-light .focused,
 .theme-light .display-list-items:hover {
