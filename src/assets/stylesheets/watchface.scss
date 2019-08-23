@@ -34,13 +34,12 @@
     width: inherit;
     justify-content: center;
     background-color: transparent;
-    border: 1px solid red;
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
     right: 0;
-    z-index: -1
+    z-index: 1;
 }
 
 .clock-background {
@@ -49,7 +48,7 @@
     }
     background-repeat: no-repeat;
     margin: auto;
-    background-size: 85vh;
+    background-size: 80vh;
     background-position: 50% 50%;
     position: absolute;
     height: 85vh;
