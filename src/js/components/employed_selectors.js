@@ -24,13 +24,23 @@ class EmployedSelectors {
     handleSubmit(e) {
         e.preventDefault();
         const selections = this.selection;
-        const activities = selections["activities"][0] === "All Activities" ? ACTIVITIES : selections['activities'];
-        const years = selections.years[0] === "All years" ? ["2013", "2014", "2015", "2016", "2017", "2018"] : selections["years"]
+        const activities = selections["activities"][0] === "All Activities" || selections["activities"][0] === undefined ? ACTIVITIES : selections['activities'];
+        const years = selections.years[0] === "All years" || selections["activities"][0] === undefined ? ["2013", "2014", "2015", "2016", "2017", "2018"] : selections["years"]
         this.result = {
             activities: activities,
             years: years,
             gender: selections.gender,
             filter: "Employed by Gender"
+        }
+        if (selections["activities"].length === 0) {
+            const actAll = document.querySelector(`#e_activityOptionAll`);
+            actAll.checked = true;
+            actAll.parentNode.classList.add("selected");
+        }
+        if (selections["years"].length === 0) {
+            const yearAll = document.querySelector(`#e_yearOptionAll`);
+            yearAll.checked = true;
+            yearAll.parentNode.classList.add("selected");
         }
     }
     

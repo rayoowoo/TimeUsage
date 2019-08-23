@@ -16,11 +16,16 @@ class DayComp {
     handleSubmit(e) {
         e.preventDefault();
         const selections = this.selection;
-        const years = selections.years[0] === "All years" ? ["2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"] : selections["years"];
+        const years = selections.years[0] === "All years" || selections["years"][0] === undefined ? ["2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"] : selections["years"];
         this.result = {
             activity: this.selection.activity,
             years,
             filter: "Day Comparison (everyone)"
+        }
+        if (selections["years"].length === 0) {
+            const yearAll = document.querySelector(`#d_yearOptionAll`);
+            yearAll.checked = true;
+            yearAll.parentNode.classList.add("selected");
         }
     }
 

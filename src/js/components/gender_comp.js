@@ -16,11 +16,16 @@ class GenderComp {
     handleSubmit(e) {
         e.preventDefault();
         const selections = this.selection;
-        const years = selections.years[0] === "All years" ? ["2013", "2014", "2015", "2016", "2017", "2018"] : selections["years"];
+        const years = selections.years[0] === "All years" || selections["years"][0] === undefined ? ["2013", "2014", "2015", "2016", "2017", "2018"] : selections["years"];
         this.result = {
             activity: this.selection.activity,
             years,
             filter: "Gender Comparison (employed)"
+        }
+        if (selections["years"].length === 0) {
+            const yearAll = document.querySelector(`#g_yearOptionAll`);
+            yearAll.checked = true;
+            yearAll.parentNode.classList.add("selected");
         }
     }
 
