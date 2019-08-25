@@ -16,7 +16,7 @@ Users are able to view how Americans have used time on a daily basis based on a 
 * change in one specific category from one year to another year (e.g. Working, from 2003 to 2008)
 
 Additional features:
-* When displaying the data for single years, the clock hand can move and slowly reveal the data as the hand moves. 
+* The clock hands move as the data loads, acting as a loading animation. 
 * The page can also be in dark mode with a button click. The button will be in the selector section. 
 
 ## Wireframes
@@ -49,6 +49,7 @@ Additional features:
 
 ### Day 4
 * Dark Mode
+* Instruction Modal
 * Add clock effect for display hours.
 
 ### Day 5
