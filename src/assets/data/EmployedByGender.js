@@ -1242,7 +1242,6 @@ for (let i = 0; i < employedByGender.length; i++) {
   const datum = employedByGender[i];
   const title = datum["Series Title"];
   const gender = datum.Gender;
-  const category = datum['Category?']
   delete datum['Category?']
   delete datum.ID;
   delete datum['Series ID'];
@@ -1250,7 +1249,7 @@ for (let i = 0; i < employedByGender.length; i++) {
   delete datum['Series Title'];
   delete datum[''];
   data[title + '-' + gender] = {
-      category,
+      activity: title,
       [gender]: datum
     }
   };
