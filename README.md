@@ -71,6 +71,7 @@ for (let i = 0; i < employedByGender.length; i++) {
 
 ### D3 Data visualization
 At the center of the application is the d3 donut graph visualization of the filtered data. The hardest aspect of this graph was the loading of the graph in a clockwise fashion. 
+
 ![clock-spinning](/src/assets/images/clocks.gif)
 
 The loading animation is a feature of D3 transitions, where the path of the arc is drawn out over a duration of time. However, D3 transitions are independent from one another, meaning that the transitions for one path is independent from another path. As a result, there is no built in way to chain the transitions of separate objects together. In order to have the graph load in a sequential fashion, each path needed to have a calculated delay that matched the timing of the previous arc's transition ending. To accomplish this, I first assigned each arc to have a percentage value based on how much of the total that arc was to occupy of the donut:
