@@ -152,7 +152,7 @@ body {
 
 .content {
   display: flex;
-  margin: 15px 0px; }
+  margin-top: 10px; }
 
 .sides {
   flex: 3;
@@ -240,12 +240,8 @@ body {
   width: inherit;
   justify-content: center;
   background-color: transparent;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 1; }
+  height: 100%;
+  width: 100%; }
 
 .clock-background {
   background-repeat: no-repeat;

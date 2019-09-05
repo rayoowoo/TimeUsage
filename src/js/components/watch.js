@@ -2,7 +2,8 @@ import {alpha, COLORS} from '../helpers/constants'
 import Utils from '../helpers/utils'
 
 export default (data) => {
-    const margin = window.innerHeight * 0.11;
+    // const margin = window.innerHeight * 0.11;
+    const margin = window.innerHeight * 0.04;
 
     let width, height;
     const utils = new Utils();
